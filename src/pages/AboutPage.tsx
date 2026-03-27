@@ -1,5 +1,5 @@
 import { Award, Users, Zap, TrendingUp, CheckCircle2 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import Counter from '../components/Counter';
@@ -57,7 +57,7 @@ const team = [
   { role: 'Arquitectura Interior', description: 'Desarrollo de espacios funcionales con acabados de alta gama.' },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -68,7 +68,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,

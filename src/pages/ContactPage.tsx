@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, Clock, CheckCircle2, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, ShieldCheck } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';

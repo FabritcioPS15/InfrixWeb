@@ -31,6 +31,9 @@ function App() {
       touchMultiplier: 2,
     });
 
+    // Expose lenis to window for ScrollToTop component
+    (window as any).lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);

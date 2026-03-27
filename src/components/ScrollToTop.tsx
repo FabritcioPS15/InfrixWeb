@@ -5,8 +5,15 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    // Force a scroll reset for smooth scroll libraries like Lenis
+    // If Lenis is being used, use its scrollTo method for an immediate jump
+    const lenis = (window as any).lenis;
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+    
+    // Fallback for standard document scroll
     document.documentElement.scrollTo(0, 0);
   }, [pathname]);
 

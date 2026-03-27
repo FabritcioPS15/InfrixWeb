@@ -62,7 +62,7 @@ export default function PinturaPage() {
             <div className="order-1 md:order-2">
               <div className="aspect-square bg-gray-100 overflow-hidden shadow-2xl relative group rounded-[40px]">
                 <img 
-                  src="https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=1200&auto=format&fit=crop" 
+                   src="https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=1200&auto=format&fit=crop" 
                   alt="Pintura Industrial" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -75,3 +75,4 @@ export default function PinturaPage() {
     </PageTransition>
   );
 }
+
