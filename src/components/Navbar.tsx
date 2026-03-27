@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3">
-              <img src="/src/public/assets/InfrixPng.png" alt="INFRIX Logo" className="h-20 w-auto object-contain" />
+              <img src="/assets/InfrixPng.png" alt="INFRIX Logo" className="h-20 w-auto object-contain" />
               <div className="flex flex-col">
               </div>
             </Link>

@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Column 1: Brand & Contact Info */}
           <div className="space-y-0">
             <Link to="/" className="flex flex-col items-start space-y-3 mb-4">
-              <img src="/src/public/assets/InfrixPng.png" alt="INFRIX Logo" className="h-32 w-auto object-contain" />
+              <img src="/assets/InfrixPng.png" alt="INFRIX Logo" className="h-32 w-auto object-contain" />
             </Link>
 
             <ul className="space-y-4 pt-4">
