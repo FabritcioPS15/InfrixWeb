@@ -57,7 +57,7 @@ const allProjects = [
   }
 ];
 
-export default function Proyectos() {
+export default function ProyectosPage() {
   const [filter, setFilter] = useState('Todos');
 
   const filteredProjects = filter === 'Todos' 

@@ -15,7 +15,7 @@ const servicesList = [
   'Pintura'
 ];
 
-export default function Contacto() {
+export default function ContactoPage() {
   const [formData, setFormData] = useState({
     nombre: '',
     empresa: '',

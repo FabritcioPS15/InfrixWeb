@@ -63,7 +63,7 @@ const serviceIcons: Record<string, JSX.Element> = {
   ),
 };
 
-export default function Servicios() {
+export default function ServiciosPage() {
   return (
     <div className="bg-navy-deep">
       <PageHero 
