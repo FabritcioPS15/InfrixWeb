@@ -1,21 +1,18 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export default function ScrollToTop() {
+const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // If Lenis is being used, use its scrollTo method for an immediate jump
-    const lenis = (window as any).lenis;
-    if (lenis) {
-      lenis.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
+    // If lenis is being used, we should also notify it
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(0, { immediate: true });
     }
-    
-    // Fallback for standard document scroll
-    document.documentElement.scrollTo(0, 0);
   }, [pathname]);
 
   return null;
-}
+};
+
+export default ScrollToTop;

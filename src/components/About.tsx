@@ -1,91 +1,111 @@
-import { Award, Users, Target, Shield } from 'lucide-react';
-import Counter from './Counter';
+import { motion } from 'framer-motion';
 
-const values = [
+const features = [
   {
-    icon: Award,
-    title: 'Calidad',
-    description: 'Compromiso con la excelencia en cada proyecto que realizamos.',
+    title: 'ISO 9001',
+    description: 'Gestión de calidad certificada para garantizar la excelencia operativa.',
   },
   {
-    icon: Users,
-    title: 'Equipo Profesional',
-    description: 'Personal altamente capacitado y con experiencia comprobada.',
+    title: 'Metodología BIM',
+    description: 'Optimización de procesos mediante modelado digital avanzado.',
   },
   {
-    icon: Target,
-    title: 'Precisión',
-    description: 'Cumplimiento de plazos y especificaciones técnicas exactas.',
+    title: 'Equipo Experto',
+    description: 'Ingenieros especializados con trayectoria internacional.',
   },
   {
-    icon: Shield,
-    title: 'Seguridad',
-    description: 'Protocolos rigurosos para garantizar la seguridad integral.',
+    title: 'Sostenibilidad',
+    description: 'Prácticas eco-eficientes y altos estándares en seguridad industrial.',
   },
 ];
 
 export default function About() {
   return (
-    <section id="nosotros" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="nosotros" className="section-padding bg-[var(--navy-section)] relative overflow-hidden">
+      {/* Decorative Diagonal Pattern Background for section */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+        style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, var(--blue-accent), var(--blue-accent) 1px, transparent 1px, transparent 10px)'
+        }}
+      ></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-infrix-blue-bright text-sm font-semibold tracking-widest uppercase">
-              Sobre Nosotros
-            </span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-infrix-dark leading-tight">
-              Líderes en
-              <span className="block text-infrix-blue-bright mt-2">Ingeniería y Construcción</span>
-            </h2>
-            <div className="mt-6 space-y-4 text-infrix-gray leading-relaxed">
-              <p>
-                INFRIX es una empresa peruana especializada en brindar soluciones integrales de ingeniería y construcción, con más de 10 años de experiencia en el mercado nacional.
-              </p>
-              <p>
-                Nuestro compromiso es entregar proyectos de la más alta calidad, cumpliendo con los estándares internacionales y superando las expectativas de nuestros clientes.
-              </p>
-              <p>
-                Contamos con un equipo multidisciplinario de ingenieros, arquitectos y técnicos especializados que trabajan con tecnología de punta y metodologías probadas.
-              </p>
+          {/* Left Column: Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col space-y-8"
+          >
+            <div>
+              <span className="text-[var(--blue-accent)] font-semibold uppercase tracking-[5px] text-xs">
+                Sobre Nosotros
+              </span>
+              <h2 className="text-5xl md:text-6xl text-white mt-4 display-font">
+                LIDERANDO LA <span className="text-[var(--blue-accent)]">INGENIERÍA</span>
+              </h2>
+              <div className="vertical-accent h-16 mt-6"></div>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-6">
-              <div className="bg-infrix-light border border-infrix-blue/30 rounded-lg p-6">
-                <div className="text-3xl font-bold text-infrix-blue-bright">
-                  <Counter value={500} suffix="+" />
+            <p className="text-[var(--gray-text)] text-lg leading-relaxed">
+              Infrix nace con el propósito de elevar los estándares de la construcción en el Perú. 
+              Nuestra filosofía se basa en la honestidad, la innovación tecnológica y el cumplimiento 
+              riguroso de los plazos de entrega.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="flex flex-col space-y-2">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-1.5 h-1.5 bg-[var(--blue-accent)] rotate-45" />
+                    <h4 className="text-white font-bold text-sm uppercase tracking-widest-2">{feature.title}</h4>
+                  </div>
+                  <p className="text-[var(--gray-muted)] text-sm leading-snug">
+                    {feature.description}
+                  </p>
                 </div>
-                <div className="text-infrix-gray text-sm mt-2">Proyectos Ejecutados</div>
-              </div>
-              <div className="bg-infrix-light border border-infrix-blue/30 rounded-lg p-6">
-                <div className="text-3xl font-bold text-infrix-blue-bright">
-                  <Counter value={100} suffix="%" />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right Column: Dark Panel / Badge */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="bg-[var(--navy-deepest)] p-12 lg:p-24 border border-white/5 relative overflow-hidden">
+              {/* Diagonal Line Pattern */}
+              <div 
+                className="absolute inset-0 opacity-[0.05]" 
+                style={{
+                  backgroundImage: 'repeating-linear-gradient(-45deg, #fff, #fff 1px, transparent 1px, transparent 20px)'
+                }}
+              ></div>
+              
+              <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-6">
+                <div className="flex flex-col items-center">
+                  <span className="text-9xl md:text-[150px] text-[var(--blue-accent)] display-font leading-none italic">
+                    25
+                  </span>
+                  <span className="text-2xl text-white display-font tracking-[8px] uppercase -mt-4">
+                    Años
+                  </span>
                 </div>
-                <div className="text-infrix-gray text-sm mt-2">Clientes Satisfechos</div>
+                <div className="thin-divider !bg-[var(--blue-accent)]/30 w-1/2 mx-auto" />
+                <p className="text-white/80 font-medium uppercase tracking-[3px] text-sm">
+                  De excelencia en construcción industrial
+                </p>
               </div>
             </div>
-          </div>
 
-          <div className="space-y-6">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="flex items-start space-x-4 bg-infrix-light border border-infrix-gray/30 rounded-lg p-6 hover:border-infrix-blue-bright/50 transition-all duration-300"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-infrix-blue/20 rounded-lg flex items-center justify-center">
-                      <Icon className="text-infrix-blue-bright" size={24} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-infrix-dark mb-2">{value.title}</h3>
-                    <p className="text-infrix-gray text-sm leading-relaxed">{value.description}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+            {/* Floating accent elements */}
+            <div className="absolute -bottom-8 -left-8 w-24 h-24 border-l border-b border-[var(--blue-accent)]/50" />
+            <div className="absolute -top-8 -right-8 w-24 h-24 border-r border-t border-[var(--blue-accent)]/50" />
+          </motion.div>
         </div>
       </div>
     </section>

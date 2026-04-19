@@ -1,95 +1,112 @@
-import { ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
-    title: 'Centro Comercial Plaza Norte',
-    category: 'Retail',
-    image: 'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Instalaciones eléctricas y acabados interiores',
+    id: 'large',
+    title: 'Torre Corporativa Miraflores',
+    location: 'Lima, Perú',
+    image: 'https://images.pexels.com/photos/1106476/pexels-photo-1106476.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    category: 'Oficinas',
   },
   {
-    title: 'Complejo Residencial Las Palmeras',
-    category: 'Residencial',
+    id: 'small-1',
+    title: 'Viaducto Huascarán',
+    location: 'Áncash, Perú',
+    image: 'https://images.pexels.com/photos/3406000/pexels-photo-3406000.jpeg?auto=compress&cs=tinysrgb&w=800',
+    category: 'Infraestructura',
+  },
+  {
+    id: 'small-2',
+    title: 'Condominio Casuarinas 360',
+    location: 'Santiago de Surco, Perú',
     image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Drywall y gasfitería integral',
-  },
-  {
-    title: 'Oficinas Corporativas San Isidro',
-    category: 'Corporativo',
-    image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Mobiliario y sistemas electromecánicos',
-  },
-  {
-    title: 'Planta Industrial Callao',
-    category: 'Industrial',
-    image: 'https://images.pexels.com/photos/1427107/pexels-photo-1427107.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Estructuras metálicas y obra civil',
-  },
-  {
-    title: 'Hotel Boutique Miraflores',
-    category: 'Hospitalidad',
-    image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Acabados arquitectónicos premium',
-  },
-  {
-    title: 'Centro Educativo Villa El Salvador',
-    category: 'Educación',
-    image: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Instalaciones completas y estructuras',
+    category: 'Residencial',
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 bg-infrix-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-infrix-blue-bright text-sm font-semibold tracking-widest uppercase">
-            Nuestros Proyectos
-          </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-infrix-dark">
-            Experiencia Comprobada en
-            <span className="block text-infrix-blue-bright mt-2">Proyectos de Alto Nivel</span>
-          </h2>
-          <p className="mt-6 text-infrix-gray text-lg max-w-3xl mx-auto leading-relaxed">
-            Hemos participado en proyectos de diversos sectores, siempre manteniendo nuestro compromiso con la calidad y excelencia.
-          </p>
+    <section id="proyectos" className="section-padding bg-[var(--navy-deepest)]">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div className="flex-1">
+            <span className="text-[var(--blue-accent)] font-semibold uppercase tracking-[5px] text-xs">
+              Portafolio
+            </span>
+            <h2 className="text-5xl md:text-6xl text-white mt-4">
+              PROYECTOS <span className="text-white/20">EMBLEMÁTICOS</span>
+            </h2>
+            <div className="vertical-accent h-16 mt-6 ml-0"></div>
+          </div>
+          <div className="flex-1 max-w-md">
+            <p className="text-[var(--gray-text)] text-sm leading-relaxed">
+              Nuestra ingeniería ha dejado huella en los proyectos más desafiantes del país, 
+              garantizando precisión técnica y eficiencia operativa.
+            </p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-lg overflow-hidden border border-infrix-gray/30 hover:border-infrix-blue-bright/50 transition-all duration-300 hover:shadow-xl hover:shadow-infrix-blue-bright/10"
-            >
-              <div className="relative h-64 overflow-hidden">
+        {/* Asymmetric Grid */}
+        <div className="grid md:grid-cols-2 gap-6 h-[800px]">
+          {/* Large Card spanning 2 rows on desktop */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative h-full overflow-hidden group border border-white/5"
+          >
+            <img
+              src={projects[0].image}
+              alt={projects[0].title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy-deepest)] via-transparent to-transparent opacity-90" />
+            
+            <div className="absolute bottom-0 left-0 p-8 flex flex-col space-y-2">
+              <span className="text-[var(--blue-accent)] text-xs font-semibold uppercase tracking-widest-2">
+                {projects[0].category}
+              </span>
+              <h3 className="text-3xl md:text-4xl text-white display-font tracking-wider">
+                {projects[0].title}
+              </h3>
+              <p className="text-[var(--gray-muted)] text-sm font-medium">{projects[0].location}</p>
+            </div>
+            
+            <div className="absolute top-8 right-8 border border-white/20 px-4 py-2 text-white/50 text-xs uppercase tracking-widest-3">
+              01 / 2024
+            </div>
+          </motion.div>
+
+          {/* Right column with two smaller cards */}
+          <div className="flex flex-col gap-6 h-full">
+            {projects.slice(1).map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="relative flex-1 overflow-hidden group border border-white/5"
+              >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
-                <div className="absolute top-4 right-4">
-                  <span className="bg-infrix-blue-bright text-white text-xs font-semibold px-3 py-1.5 rounded">
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy-deepest)] via-transparent to-transparent opacity-80" />
+                
+                <div className="absolute bottom-0 left-0 p-6 flex flex-col space-y-1">
+                  <span className="text-[var(--blue-accent)] text-[10px] font-semibold uppercase tracking-widest-2">
                     {project.category}
                   </span>
+                  <h3 className="text-2xl text-white display-font">
+                    {project.title}
+                  </h3>
+                  <p className="text-[var(--gray-muted)] text-xs">{project.location}</p>
                 </div>
-              </div>
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-infrix-dark mb-2 group-hover:text-infrix-blue-bright transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-infrix-gray text-sm leading-relaxed mb-4">
-                  {project.description}
-                </p>
-                <button className="flex items-center text-infrix-blue-bright hover:text-infrix-dark text-sm font-semibold transition-colors duration-200">
-                  Ver detalles
-                  <ExternalLink size={16} className="ml-2" />
-                </button>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
