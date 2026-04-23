@@ -1,217 +1,371 @@
-import { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import CTABanner from '../components/CTABanner';
+import { 
+  CheckCircle2, 
+  ArrowRight, 
+  HardHat, 
+  PenTool, 
+  Zap, 
+  Trophy, 
+  Users, 
+  Building2,
+  Droplets,
+  Hammer,
+  Layout,
+  Mountain,
+  Paintbrush,
+  ChevronLeft,
+  ChevronRight
+} from 'lucide-react';
 import Counter from '../components/Counter';
+import { services as allServices } from '../data/services';
 
 const Home = () => {
+  const [startIndex, setStartIndex] = useState(0);
+
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-rotate 3 by 3
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isPaused) {
+        setStartIndex((prev) => (prev + 1) % allServices.length);
+      }
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const nextServices = () => {
+    setStartIndex((prev) => (prev + 1) % allServices.length);
+  };
+
+  const prevServices = () => {
+    setStartIndex((prev) => (prev - 1 + allServices.length) % allServices.length);
+  };
+
+  // Get current 3 services (wrapping around)
+  const getVisibleServices = () => {
+    const visible = [];
+    for (let i = 0; i < 3; i++) {
+      visible.push(allServices[(startIndex + i) % allServices.length]);
+    }
+    return visible;
+  };
+
   const stats = [
-    { label: 'Proyectos', value: 250, suffix: '+' },
-    { label: 'Años', value: 20, suffix: '+' },
-    { label: 'Satisfacción', value: 98, suffix: '%' },
+    { label: 'Completados', value: 2, suffix: 'k+', icon: <Building2 size={28} /> },
+    { label: 'Miembros', value: 3, suffix: 'k+', icon: <Users size={28} /> },
+    { label: 'Clientes Felices', value: 1.9, suffix: 'k+', icon: <CheckCircle2 size={28} /> },
+    { label: 'Premios', value: 1, suffix: 'k+', icon: <Trophy size={28} /> }
   ];
 
-  const servicePills = [
-    'Drywall & Estructuras',
-    'Melamina y Muebles',
-    'Instalaciones Eléctricas',
-    'Gasfitería y Saneamiento',
-    'Proyectos Civiles',
-    'Arquitectura Interior',
-    'Campamentos',
-    'Pintura'
+  const projects = [
+    {
+      title: 'Construcción General',
+      img: '/assets/konta/konta_project_construction_1776979709246.png',
+      category: 'Industrial'
+    },
+    {
+      title: 'Arquitectura',
+      img: '/assets/konta/konta_project_architecture_1776979728586.png',
+      category: 'Corporativo'
+    },
+    {
+      title: 'Diseño de Interiores',
+      img: '/assets/konta/konta_project_interior_1776979743858.png',
+      category: 'Comercial'
+    }
   ];
+
+  const getServiceIcon = (slug: string) => {
+    switch (slug) {
+      case 'drywall-estructuras': return <Layout size={32} />;
+      case 'melamina-muebles': return <Hammer size={32} />;
+      case 'instalaciones-electricas': return <Zap size={32} />;
+      case 'gasfiteria-saneamiento': return <Droplets size={32} />;
+      case 'proyectos-civiles-electromecanicos': return <HardHat size={32} />;
+      case 'acabados-arquitectura-interior': return <PenTool size={32} />;
+      case 'campamentos-mineros-industriales': return <Mountain size={32} />;
+      case 'pintura-revestimiento': return <Paintbrush size={32} />;
+      default: return <Building2 size={32} />;
+    }
+  };
 
   return (
-    <div className="bg-navy-deep overflow-hidden">
+    <div className="overflow-hidden bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 hero-grid bg-navy-deep border-b border-accent/20">
-        {/* Large watermark text */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
-          <span className="font-display text-[126rem] md:text-[20vw] text-accent/[0.03] tracking-widest leading-none uppercase">
-            INFRIX
-          </span>
+      <section className="relative h-screen min-h-[700px] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/assets/konta/konta_hero_bg_1776979543548.png" 
+            alt="Sitio de Construcción" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-infrix-navy/70 backdrop-blur-[1px]"></div>
         </div>
 
-        {/* Decorative corner accents */}
-        <div className="absolute top-24 left-8 w-6 h-6 border-t border-l border-accent/30" />
-        <div className="absolute top-24 right-8 w-6 h-6 border-t border-r border-accent/30" />
-        <div className="absolute bottom-12 left-8 w-6 h-6 border-b border-l border-accent/30" />
-        <div className="absolute bottom-12 right-8 w-6 h-6 border-b border-r border-accent/30" />
-
-        {/* Left Vertical Bar */}
-        <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 w-1 h-32 bg-accent hidden md:block" />
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full z-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col space-y-6 max-w-4xl"
+            className="max-w-3xl"
           >
-            <div className="inline-flex items-center space-x-3 border-l-2 border-accent pl-4 font-body">
-              <span className="text-accent text-xs tracking-[4px] uppercase font-medium">
-                Empresa de Construcción
-              </span>
-            </div>
-            
-            <h1 className="flex flex-col leading-none">
-              <span className="font-display text-7xl md:text-9xl text-white">CONSTRUIMOS</span>
-              <span className="font-display text-5xl md:text-7xl text-accent -mt-2">EL FUTURO</span>
+            <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[4px] mb-4">
+              Construyendo Excelencia
+            </h5>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold text-white leading-[1.1] mb-8 uppercase">
+              CONSTRUCCIÓN DE CALIDAD, <br />
+              <span className="text-infrix-orange">IMPRESIONES DURADERAS</span>
             </h1>
-
-            <p className="text-steel-light text-lg md:text-xl font-light font-body max-w-2xl leading-relaxed">
-              Soluciones integrales de ingeniería y construcción industrial, comercial y residencial 
-              con los más altos estándares de precisión técnica.
-            </p>
-
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link to="/proyectos" className="btn-primary">
-                Ver Proyectos
-              </Link>
-              <Link to="/servicios" className="btn-ghost">
-                Nuestros Servicios
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom Right Stats with Counters */}
-        <div className="absolute bottom-24 right-6 md:right-12 text-right hidden sm:block z-20">
-          <div className="flex flex-col space-y-10">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col">
-                <Counter 
-                  value={stat.value} 
-                  suffix={stat.suffix} 
-                  className="font-display text-5xl md:text-6xl text-white leading-none" 
-                  duration={2.5}
-                />
-                <span className="text-[10px] uppercase tracking-[4px] text-accent font-semibold mt-1">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Strip */}
-      <section className="py-12 bg-navy border-y border-accent/10">
-        <div className="overflow-x-auto whitespace-nowrap px-6 no-scrollbar">
-          <div className="flex items-center space-x-6 min-w-max mx-auto">
-            {servicePills.map((pill, idx) => (
-              <Link
-                key={idx}
-                to="/servicios"
-                className="px-6 py-2 border border-steel/20 text-[10px] uppercase tracking-widest text-steel-light hover:border-accent hover:text-white transition-all duration-300"
+            <div className="flex flex-wrap gap-4">
+              <Link 
+                to="/contacto" 
+                className="bg-infrix-orange text-white px-10 py-5 font-display font-bold uppercase tracking-widest hover:bg-white hover:text-infrix-navy transition-all duration-300 shadow-xl shadow-infrix-orange/20"
               >
-                {pill}
+                Cotizar Ahora
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Nosotros Teaser */}
-      <section className="section-padding py-24 px-6 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col space-y-8"
-          >
-            <div>
-              <span className="text-accent text-xs font-semibold uppercase tracking-widest">Nosotros</span>
-              <h2 className="text-5xl text-white mt-4 font-display">LIDERAZGO EN <br/> <span className="text-accent">CONSTRUCCIÓN</span></h2>
-            </div>
-            <p className="text-steel-light leading-relaxed font-body font-light text-lg">
-              INFRIX es una empresa peruana con amplia experiencia en el sector construcción, 
-              especializada en brindar soluciones de ingeniería civil y electromecánica. 
-              Nuestra trayectoria nos permite garantizar eficiencia y seguridad en cada obra.
-            </p>
-            <div className="grid grid-cols-2 gap-6">
-              {['Compromiso', 'Innovación', 'Seguridad', 'Excelencia'].map((item) => (
-                <div key={item} className="flex items-center space-x-3">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                  <span className="text-xs uppercase tracking-widest font-medium text-white font-body">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Diagonal Pattern Panel with Counter */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative bg-navy-light p-12 aspect-square flex items-center justify-center diagonal-pattern industrial-border"
-          >
-            <div className="bg-accent w-32 h-32 flex flex-col items-center justify-center shadow-2xl">
-               <Counter value={25} className="font-display text-5xl text-white leading-none" />
-               <span className="font-display text-sm text-white tracking-[4px] uppercase border-t border-white/20 mt-2 pt-2">Años</span>
-            </div>
-            <div className="absolute bottom-8 right-8 text-right">
-               <span className="block font-display text-xl text-white tracking-widest uppercase">Trayectoria</span>
-               <span className="block text-[10px] text-steel-light tracking-widest uppercase mt-1">Sólida ingeniería</span>
+              <Link 
+                to="/servicios" 
+                className="border-2 border-white text-white px-10 py-5 font-display font-bold uppercase tracking-widest hover:bg-white hover:text-infrix-navy transition-all duration-300"
+              >
+                Ver Servicios
+              </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Proyectos Preview */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-navy">
+      {/* 3-by-3 Oscillating Services Section */}
+      <section className="py-24 bg-white px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-4xl text-white font-display">PROYECTOS <span className="text-accent">DESTACADOS</span></h2>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="space-y-4">
+              <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Especialidades</h5>
+              <h2 className="text-4xl md:text-5xl font-display font-extrabold text-infrix-navy uppercase leading-tight">
+                NUESTROS SERVICIOS <span className="text-infrix-orange">PREMIUM</span>
+              </h2>
+            </div>
+            <div className="flex space-x-4">
+              <button 
+                onClick={prevServices}
+                className="p-4 border border-gray-100 hover:bg-infrix-orange hover:text-white transition-all shadow-lg"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={nextServices}
+                className="p-4 border border-gray-100 hover:bg-infrix-orange hover:text-white transition-all shadow-lg"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-[1.4fr_1fr] gap-6">
-            <div className="relative group overflow-hidden bg-navy-deep industrial-border aspect-[16/10]">
-              <div className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700" 
-                   style={{backgroundImage: 'url(https://images.pexels.com/photos/1106476/pexels-photo-1106476.jpeg?auto=compress&cs=tinysrgb&w=1200)'}} />
-              <div className="absolute inset-0 bg-navy-deep/40 group-hover:bg-navy-deep/20 transition-all" />
-              <div className="absolute bottom-0 left-0 p-8 w-full">
-                <span className="inline-block bg-accent text-[8px] font-semibold text-white px-2 py-1 uppercase tracking-widest mb-4 font-body">Industrial</span>
-                <h3 className="font-display text-3xl text-white mb-2">Planta Callao II</h3>
-                <p className="text-steel-silver text-xs font-light font-body mb-6 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
-                  Ampliación de estructuras metálicas y sistemas electromecánicos de máxima precisión.
-                </p>
-                <Link to="/proyectos" className="flex items-center text-accent text-[10px] uppercase font-bold tracking-widest font-body">
-                  Ver portafolio →
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              {[
-                { title: 'Torre Miraflores', cat: 'Corporativo', img: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                { title: 'Condominio Surco', cat: 'Residencial', img: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800' }
-              ].map((proj, idx) => (
-                <div key={idx} className="relative group overflow-hidden bg-navy-deep industrial-border flex-1">
-                  <div className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700" 
-                       style={{backgroundImage: `url(${proj.img})`}} />
-                  <div className="absolute inset-0 bg-navy-deep/50 group-hover:bg-navy-deep/30 transition-all" />
-                  <div className="absolute bottom-0 left-0 p-6">
-                    <span className="inline-block bg-accent text-[10px] font-semibold text-white px-2 py-1 uppercase tracking-widest mb-2 font-body">{proj.cat}</span>
-                    <h3 className="font-display text-2xl text-white tracking-widest">{proj.title}</h3>
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <AnimatePresence mode="popLayout">
+              {getVisibleServices().map((service, idx) => (
+                <motion.div
+                  key={service.slug}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="bg-white p-10 border border-gray-100 hover:border-infrix-orange transition-all duration-500 group shadow-lg shadow-gray-200/20 flex flex-col h-full"
+                >
+                  <div className="text-infrix-orange mb-8 group-hover:scale-110 transition-transform duration-500">
+                    {getServiceIcon(service.slug)}
                   </div>
-                </div>
+                  <h3 className="text-2xl font-display font-bold text-infrix-navy mb-4 uppercase tracking-wider group-hover:text-infrix-orange transition-colors">
+                    {service.name}
+                  </h3>
+                  <p className="text-gray-500 font-body text-sm mb-8 leading-relaxed line-clamp-3">
+                    {service.description}
+                  </p>
+                  <div className="mt-auto pt-6 border-t border-gray-50">
+                    <Link 
+                      to={`/servicios/${service.slug}`} 
+                      className="inline-flex items-center text-infrix-navy font-display font-bold text-[10px] tracking-widest uppercase group-hover:text-infrix-orange transition-colors"
+                    >
+                      Leer Más <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                    </Link>
+                  </div>
+                </motion.div>
               ))}
-            </div>
+            </AnimatePresence>
+          </div>
+          
+          <div className="mt-16 text-center">
+             <Link to="/servicios" className="btn-primary">Ver Todos los Servicios</Link>
           </div>
         </div>
       </section>
 
-      <CTABanner
-        title="¿LISTO PARA CONSTRUIR?"
-        body="Ofrecemos soluciones de ingeniería con el más alto rigor técnico y eficiencia. Solicita tu cotización ahora."
-        primaryLabel="Solicitar Cotización"
-        primaryLink="/contacto"
-        ghostLabel="Ver Servicios"
-        ghostLink="/servicios"
-      />
+      {/* Experience Section */}
+      <section className="py-32 bg-gray-50 overflow-hidden border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative z-10 p-4 bg-white shadow-2xl border border-gray-100">
+              <img 
+                src="/assets/konta/konta_architect_1776979668450.png" 
+                alt="Arquitecto Profesional" 
+                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+            <div className="absolute -bottom-10 -right-10 bg-infrix-navy p-12 z-20 shadow-2xl hidden md:block">
+              <div className="flex flex-col items-center text-white">
+                <Counter 
+                  value={10} 
+                  className="text-7xl font-display font-extrabold leading-none italic text-infrix-orange"
+                />
+                <span className="text-[10px] uppercase tracking-[4px] font-bold mt-4 text-white/60">Años de Liderazgo</span>
+              </div>
+            </div>
+            <div className="absolute -top-10 -left-10 w-64 h-64 diagonal-pattern opacity-10 z-0"></div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-10"
+          >
+            <div className="space-y-4">
+              <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Nuestra Trayectoria</h5>
+              <h2 className="text-4xl md:text-6xl font-display font-extrabold text-infrix-navy leading-tight uppercase">
+                INGENIERÍA QUE <span className="text-infrix-orange">TRANSFORMA</span> EL PAÍS
+              </h2>
+              <div className="w-16 h-1 bg-infrix-orange" />
+            </div>
+            <p className="text-gray-600 font-body text-xl leading-relaxed font-normal">
+              Con una década de excelencia técnica, hemos consolidado nuestra presencia en los proyectos más exigentes del Perú, fusionando innovación digital con construcción tradicional.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-8">
+              {[
+                'Staff de Ingenieros CIP',
+                'Certificación ISO 9001',
+                'Metodología BIM 4D',
+                'Seguridad Integral SST'
+              ].map((benefit, i) => (
+                <div key={i} className="flex items-center space-x-4 group">
+                  <div className="bg-infrix-orange/10 p-2 group-hover:bg-infrix-orange transition-colors">
+                    <CheckCircle2 className="text-infrix-orange group-hover:text-white" size={20} />
+                  </div>
+                  <span className="font-display font-bold text-infrix-navy uppercase tracking-widest text-[11px]">{benefit}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pt-6">
+              <Link 
+                to="/nosotros" 
+                className="bg-infrix-navy text-white px-12 py-5 font-display font-bold uppercase tracking-widest hover:bg-infrix-orange transition-all duration-300 shadow-xl shadow-infrix-navy/20"
+              >
+                Conoce Nuestra Historia
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Counter */}
+      <section className="py-24 bg-infrix-navy text-white relative overflow-hidden">
+        <div className="absolute inset-0 diagonal-pattern opacity-5" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-16 text-center">
+          {stats.map((stat, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center space-y-4"
+            >
+              <div className="text-infrix-orange/60">{stat.icon}</div>
+              <Counter 
+                value={stat.value} 
+                suffix={stat.suffix} 
+                className="text-6xl md:text-7xl font-display font-extrabold text-white tracking-tighter"
+              />
+              <span className="text-[10px] uppercase tracking-[4px] text-infrix-orange font-bold">{stat.label}</span>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects Gallery */}
+      <section className="py-32 bg-white px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div className="space-y-4">
+              <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Hitos</h5>
+              <h2 className="text-4xl md:text-6xl font-display font-extrabold text-infrix-navy uppercase">PROYECTOS QUE <span className="text-infrix-orange">INSPIRAN</span></h2>
+              <div className="w-16 h-1 bg-infrix-orange" />
+            </div>
+            <Link to="/proyectos" className="group text-infrix-navy font-display font-bold text-xs tracking-widest uppercase hover:text-infrix-orange transition-colors flex items-center">
+              Explorar Portafolio Completo <ArrowRight size={20} className="ml-3 group-hover:translate-x-3 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {projects.map((project, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative h-[600px] overflow-hidden cursor-pointer bg-infrix-navy shadow-2xl"
+              >
+                <img 
+                  src={project.img} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-infrix-navy via-infrix-navy/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute bottom-0 left-0 p-10 w-full transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="text-infrix-orange text-xs font-bold uppercase tracking-widest block mb-4 border-l-2 border-infrix-orange pl-3">{project.category}</span>
+                  <h3 className="text-3xl font-display font-extrabold text-white mb-6 uppercase tracking-wider">{project.title}</h3>
+                  <div className="w-0 h-1 bg-infrix-orange group-hover:w-full transition-all duration-700"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-infrix-orange py-24 px-6 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+          <div className="max-w-2xl text-center lg:text-left">
+            <h2 className="text-4xl md:text-6xl font-display font-extrabold text-white uppercase leading-tight mb-6">
+              ¿LISTO PARA LLEVAR TU <br/> <span className="text-infrix-navy">PROYECTO AL SIGUIENTE NIVEL?</span>
+            </h2>
+            <p className="text-white/90 font-body text-lg font-medium tracking-wide">
+              Contáctanos hoy mismo para una asesoría técnica especializada y descubre por qué somos la elección número uno en ingeniería de detalle.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <Link 
+              to="/contacto" 
+              className="bg-infrix-navy text-white px-12 py-5 font-display font-bold uppercase tracking-widest hover:bg-white hover:text-infrix-navy transition-all duration-300 shadow-2xl"
+            >
+              Contactar Ahora
+            </Link>
+          </div>
+        </div>
+        <div className="absolute top-0 right-0 w-1/2 h-full diagonal-pattern opacity-10 rotate-12" />
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+      </section>
     </div>
   );
 };

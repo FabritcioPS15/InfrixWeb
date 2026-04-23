@@ -4,53 +4,36 @@
 
 @layer base {
   body {
-    @apply bg-navy-deep text-white font-body antialiased;
+    @apply bg-white text-infrix-navy font-body antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-widest uppercase;
+    @apply font-display uppercase;
   }
 }
 
 @layer components {
   .hero-grid {
-    background-image: linear-gradient(rgba(74, 143, 212, 0.06) 1px, transparent 1px), 
-                      linear-gradient(90deg, rgba(74, 143, 212, 0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(219, 104, 32, 0.06) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(219, 104, 32, 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
-  .fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
   .btn-primary {
-    @apply bg-accent hover:bg-accent-dark text-white px-8 py-3 font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-none active:scale-95;
-    font-size: 0.75rem;
+    @apply bg-infrix-orange hover:bg-infrix-navy text-white px-10 py-4 font-display font-bold uppercase tracking-[0.2em] transition-all duration-300 rounded-none active:scale-95 shadow-lg shadow-infrix-orange/20;
+    font-size: 0.8rem;
   }
 
   .btn-ghost {
-    @apply border border-steel/40 hover:bg-white/5 text-white px-8 py-3 font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-none active:scale-95;
-    font-size: 0.75rem;
+    @apply border-2 border-infrix-navy hover:bg-infrix-navy hover:text-white text-infrix-navy px-10 py-4 font-display font-bold uppercase tracking-[0.2em] transition-all duration-300 rounded-none active:scale-95;
+    font-size: 0.8rem;
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Custom styles for sharp corners and industrial lines */
 .industrial-border {
-  @apply border border-accent/20;
+  @apply border border-infrix-orange/20;
 }
 
 .diagonal-pattern {
-  background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 0, transparent 20px);
+  background-image: repeating-linear-gradient(-45deg, rgba(219, 104, 32, 0.05) 0, rgba(219, 104, 32, 0.05) 1px, transparent 0, transparent 20px);
 }

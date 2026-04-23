@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import InfrixNavbar from './components/InfrixNavbar';
+import InfrixFooter from './components/InfrixFooter';
 import Home from './pages/Home';
 import ServiciosPage from './pages/ServiciosPage';
 import ProyectosPage from './pages/ProyectosPage';
@@ -35,9 +35,9 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-navy-deep flex flex-col selection:bg-accent selection:text-white">
-        <Navbar />
-        <main className="flex-grow pt-20">
+      <div className="min-h-screen bg-white flex flex-col selection:bg-infrix-orange selection:text-white font-body">
+        <InfrixNavbar />
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/servicios" element={<ServiciosPage />} />
@@ -47,7 +47,7 @@ function App() {
             <Route path="/servicios/:serviceId" element={<ServiceDetail />} />
           </Routes>
         </main>
-        <Footer />
+        <InfrixFooter />
         <FloatingWhatsApp />
       </div>
     </Router>

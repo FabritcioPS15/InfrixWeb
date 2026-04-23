@@ -4,16 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        infrix: {
+          orange: '#db6820',
+          navy: '#15293a',
+          dark: '#0e1b27',
+          gray: '#f8f9fa',
+        },
         navy: {
-          deep: '#0a1628',
-          DEFAULT: '#0e1f3d',
-          light: '#162d55',
-          mid: '#1e3d70',
+          deep: '#15293a',
+          DEFAULT: '#15293a',
+          light: '#1e3a54',
+          mid: '#2a4e6e',
         },
         accent: {
-          DEFAULT: '#4a8fd4',
-          dark: '#3a7abf',
-          light: '#85b7eb',
+          DEFAULT: '#db6820',
+          dark: '#c45a1b',
+          light: '#f17b34',
         },
         steel: {
           dark: '#3a4455',
@@ -25,8 +31,8 @@ export default {
         offwhite: '#f5f7fa',
       },
       fontFamily: {
-        display: ['"Bebas Neue"', 'sans-serif'],
-        body: ['Barlow', 'sans-serif'],
+        display: ['Montserrat', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
       },
     },
   },
