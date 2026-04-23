@@ -32,7 +32,7 @@ export default function ServiceDetail() {
   return (
     <div className="bg-white min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden bg-infrix-navy">
+      <section className="relative min-h-[60vh] flex items-center pt-20 overflow-hidden bg-infrix-navy">
         {/* Background Overlay Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -47,14 +47,14 @@ export default function ServiceDetail() {
         {/* Left Vertical Bar */}
         <div className="absolute left-0 top-0 w-1 bg-infrix-orange h-full hidden lg:block" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full z-10 py-20 mt-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full z-10 py-16 mt-5">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
             {/* Breadcrumb */}
-            <nav className="flex items-center space-x-2 text-gray-400 text-xs tracking-[4px] uppercase mb-12 font-display font-bold">
+            <nav className="flex items-center space-x-2 text-gray-400 text-[10px] tracking-[3px] uppercase mb-8 font-display font-bold">
               <Link to="/" className="hover:text-white transition-colors">Inicio</Link>
               <span>/</span>
               <Link to="/servicios" className="hover:text-white transition-colors">Servicios</Link>
@@ -62,24 +62,24 @@ export default function ServiceDetail() {
               <span className="text-infrix-orange">{service.name}</span>
             </nav>
 
-            <span className="text-infrix-orange text-xs tracking-[4px] uppercase border-l-2 border-infrix-orange pl-3 mb-6 block font-bold">
+            <span className="text-infrix-orange text-[10px] tracking-[3px] uppercase border-l-2 border-infrix-orange pl-3 mb-4 block font-bold">
               Especialidad Técnica
             </span>
 
-            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide text-white font-extrabold leading-[0.9] mb-8 uppercase">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide text-white font-extrabold leading-[1] mb-6 uppercase">
               {service.name}
             </h1>
 
-            <p className="text-gray-300 font-body font-normal text-xl md:text-2xl mt-4 max-w-xl leading-relaxed italic">
+            <p className="text-gray-300 font-body font-normal text-lg md:text-xl mt-4 max-w-xl leading-relaxed italic">
               "{service.tagline}"
             </p>
 
             {/* Stats Row */}
-            <div className="flex flex-wrap gap-x-12 gap-y-6 mt-16 pt-12 border-t border-white/10">
+            <div className="flex flex-wrap gap-x-12 gap-y-6 mt-10 pt-8 border-t border-white/10">
               {service.stats.map((stat, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="font-display text-4xl text-infrix-orange font-bold uppercase">{stat.value}</span>
-                  <span className="text-gray-400 text-[10px] tracking-[3px] uppercase mt-1 font-bold font-display">{stat.label}</span>
+                  <span className="font-display text-3xl text-infrix-orange font-bold uppercase">{stat.value}</span>
+                  <span className="text-gray-400 text-[9px] tracking-[2px] uppercase mt-1 font-bold font-display">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -88,7 +88,7 @@ export default function ServiceDetail() {
 
         {/* Large Faded Number */}
         <div className="absolute right-8 bottom-0 select-none pointer-events-none hidden lg:block">
-           <span className="font-display text-[20rem] text-white/5 font-extrabold leading-none">
+           <span className="font-display text-[15rem] text-white/5 font-extrabold leading-none">
              {service.id}
            </span>
         </div>
@@ -96,11 +96,11 @@ export default function ServiceDetail() {
       </section>
 
       {/* 2. Overview Section */}
-      <section className="bg-white py-24 px-6 md:px-16 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-20">
-          <div className="space-y-6">
+      <section className="bg-white py-16 px-6 md:px-16 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-16">
+          <div className="space-y-4">
             <span className="text-infrix-orange text-[10px] tracking-[4px] uppercase font-bold font-display">Descripción del servicio</span>
-            <h2 className="font-display text-5xl text-infrix-navy font-extrabold uppercase leading-tight">SOLUCIONES CON <br/> <span className="text-infrix-orange">MÁXIMO RIGOR</span></h2>
+            <h2 className="font-display text-4xl text-infrix-navy font-extrabold uppercase leading-tight">SOLUCIONES CON <br/> <span className="text-infrix-orange">MÁXIMO RIGOR</span></h2>
             <p className="text-gray-600 font-body font-normal leading-relaxed text-lg">
               {service.description}
             </p>
@@ -134,7 +134,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* 4. Process Section */}
-      <section className="bg-white py-24 px-6 md:px-16 overflow-hidden">
+      <section className="bg-white py-16 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
              <span className="text-infrix-orange text-[10px] tracking-[4px] uppercase font-bold mb-4 block font-display">Metodología INFRIX</span>
@@ -158,7 +158,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* 5. Related Services Section */}
-      <section className="bg-gray-50 py-24 px-6 md:px-16 border-t border-gray-100">
+      <section className="bg-gray-50 py-16 px-6 md:px-16 border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
              <h2 className="font-display text-4xl text-infrix-navy font-extrabold uppercase tracking-widest leading-none">SERVICIOS <span className="text-infrix-orange">RELACIONADOS</span></h2>
