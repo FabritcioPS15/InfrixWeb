@@ -58,7 +58,7 @@ export default function InfrixNavbar() {
             <img 
               src="/assets/Infrixlogo.png" 
               alt="INFRIX Logo" 
-              className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              className="h-12 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
           </Link>
 
