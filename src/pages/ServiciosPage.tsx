@@ -81,9 +81,19 @@ export default function ServiciosPage() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-12 md:p-16 lg:p-20 relative group overflow-hidden transition-all duration-500 hover:bg-gray-50"
+              className="bg-white p-12 md:p-16 lg:p-20 relative group overflow-hidden transition-all duration-700 hover:bg-infrix-navy"
             >
-              <span className="absolute top-8 right-8 font-display text-8xl text-infrix-navy opacity-[0.03] select-none group-hover:opacity-[0.05] transition-opacity uppercase">
+              {/* Background Image that appears on hover */}
+              <div className="absolute inset-0 z-0 overflow-hidden">
+                <img 
+                  src={service.images.hero} 
+                  alt={service.name}
+                  className="w-full h-full object-cover opacity-0 group-hover:opacity-20 group-hover:scale-110 grayscale transition-all duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-infrix-navy via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700" />
+              </div>
+
+              <span className="absolute top-8 right-8 font-display text-8xl text-infrix-navy opacity-[0.03] select-none group-hover:opacity-[0.1] group-hover:text-white transition-all duration-500 uppercase">
                 {service.id}
               </span>
 
@@ -96,10 +106,10 @@ export default function ServiciosPage() {
                 
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h3 className="text-2xl md:text-3xl text-infrix-navy font-display font-bold uppercase tracking-widest leading-tight">
+                    <h3 className="text-2xl md:text-3xl text-infrix-navy group-hover:text-white font-display font-bold uppercase tracking-widest leading-tight transition-colors duration-500">
                       {service.name}
                     </h3>
-                    <p className="text-gray-500 text-[10px] uppercase tracking-[3px] font-bold font-body italic opacity-60">
+                    <p className="text-gray-500 group-hover:text-infrix-orange text-[10px] uppercase tracking-[3px] font-bold font-body italic opacity-60 transition-colors duration-500">
                       "{service.tagline}"
                     </p>
                   </div>
@@ -108,7 +118,7 @@ export default function ServiciosPage() {
                     {service.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start space-x-3">
                         <div className="mt-1.5 w-1.5 h-1.5 bg-infrix-orange/60 flex-shrink-0 rounded-none rotate-45" />
-                        <span className="text-gray-600 text-sm font-body font-normal leading-snug">{bullet}</span>
+                        <span className="text-gray-600 group-hover:text-gray-300 text-sm font-body font-normal leading-snug transition-colors duration-500">{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -124,7 +134,7 @@ export default function ServiciosPage() {
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-infrix-orange scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-infrix-orange scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
             </motion.div>
           ))}
         </div>

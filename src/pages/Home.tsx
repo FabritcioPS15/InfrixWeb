@@ -176,24 +176,35 @@ const Home = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1, ease: "easeInOut" }}
-                  className="bg-white p-6 md:p-10 border border-gray-100 hover:border-infrix-orange transition-all duration-500 group shadow-lg shadow-gray-200/20 flex flex-col h-full"
+                  className="bg-white p-6 md:p-10 border border-gray-100 hover:border-infrix-orange transition-all duration-700 group shadow-lg shadow-gray-200/20 flex flex-col h-full relative overflow-hidden hover:bg-infrix-navy"
                 >
-                  <div className="text-infrix-orange mb-8 group-hover:scale-110 transition-transform duration-500">
-                    {getServiceIcon(service.slug)}
+                  {/* Background Image that appears on hover */}
+                  <div className="absolute inset-0 z-0 overflow-hidden">
+                    <img 
+                      src={service.images.hero} 
+                      alt={service.name}
+                      className="w-full h-full object-cover opacity-0 group-hover:opacity-20 group-hover:scale-110 grayscale transition-all duration-1000"
+                    />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-infrix-navy mb-4 uppercase tracking-wider group-hover:text-infrix-orange transition-colors">
-                    {service.name}
-                  </h3>
-                  <p className="text-gray-500 font-body text-sm mb-8 leading-relaxed line-clamp-3">
-                    {service.description}
-                  </p>
-                  <div className="mt-auto pt-6 border-t border-gray-50">
-                    <Link 
-                      to={`/servicios/${service.slug}`} 
-                      className="inline-flex items-center text-infrix-navy font-display font-bold text-[10px] tracking-widest uppercase group-hover:text-infrix-orange transition-colors"
-                    >
-                      Leer Más <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
-                    </Link>
+
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="text-infrix-orange mb-8 group-hover:scale-110 transition-transform duration-500">
+                      {getServiceIcon(service.slug)}
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-infrix-navy mb-4 uppercase tracking-wider group-hover:text-white transition-colors duration-500">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-500 font-body text-sm mb-8 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-500">
+                      {service.description}
+                    </p>
+                    <div className="mt-auto pt-6 border-t border-gray-50 group-hover:border-white/10 transition-colors duration-500">
+                      <Link 
+                        to={`/servicios/${service.slug}`} 
+                        className="inline-flex items-center text-infrix-navy font-display font-bold text-[10px] tracking-widest uppercase group-hover:text-infrix-orange transition-colors"
+                      >
+                        Leer Más <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               ))}

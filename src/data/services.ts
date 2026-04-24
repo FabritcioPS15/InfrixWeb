@@ -51,7 +51,7 @@ export const services: Service[] = [
       { step: '04', title: 'Entrega', desc: 'Control de calidad final y entrega de obra limpia.' }
     ],
     images: {
-      hero: '/images/drywall-hero.jpg',
+      hero: '/assets/services/Drywall y estructuras.jpeg',
       gallery: [
         '/images/drywall-1.jpg',
         '/images/drywall-2.jpg',
@@ -84,7 +84,7 @@ export const services: Service[] = [
       { step: '04', title: 'Ensamblaje', desc: 'Montaje en sitio con ajustes finales de precisión.' }
     ],
     images: {
-      hero: '/images/melamina-hero.jpg',
+      hero: '/assets/services/Melamine y muebles.jpeg',
       gallery: [
         '/images/melamina-1.jpg',
         '/images/melamina-2.jpg',
@@ -117,7 +117,7 @@ export const services: Service[] = [
       { step: '04', title: 'Pruebas', desc: 'Protocolos de prueba y certificación de operatividad.' }
     ],
     images: {
-      hero: '/images/electricas-hero.jpg',
+      hero: '/assets/services/Instalaciones-electricas.jpg',
       gallery: [
         '/images/electricas-1.jpg',
         '/images/electricas-2.jpg',
@@ -150,7 +150,7 @@ export const services: Service[] = [
       { step: '04', title: 'Presión', desc: 'Pruebas de estanqueidad y presión hidráulica.' }
     ],
     images: {
-      hero: '/images/gasfiteria-hero.jpg',
+      hero: '/assets/services/Gasfiteria y saneamiento.jpeg',
       gallery: [
         '/images/gasfiteria-1.jpg',
         '/images/gasfiteria-2.jpg',
@@ -183,7 +183,7 @@ export const services: Service[] = [
       { step: '04', title: 'Comisionamiento', desc: 'Pruebas de funcionamiento de sistemas integrados.' }
     ],
     images: {
-      hero: '/images/civiles-hero.jpg',
+      hero: '/assets/services/Proyectos Civiles.jpeg',
       gallery: [
         '/images/civiles-1.jpg',
         '/images/civiles-2.jpg',
@@ -216,7 +216,7 @@ export const services: Service[] = [
       { step: '04', title: 'Pulido', desc: 'Limpieza fina y tratamiento protector de superficies.' }
     ],
     images: {
-      hero: '/images/acabados-hero.jpg',
+      hero: '/assets/services/Acabados y arquitectura.jpeg',
       gallery: [
         '/images/acabados-1.jpg',
         '/images/acabados-2.jpg',
@@ -249,7 +249,7 @@ export const services: Service[] = [
       { step: '04', title: 'Equipamiento', desc: 'Habilitación de mobiliario y servicios críticos.' }
     ],
     images: {
-      hero: '/images/campamentos-hero.jpg',
+      hero: '/assets/services/Campamentos Minerales.jpeg',
       gallery: [
         '/images/campamentos-1.jpg',
         '/images/campamentos-2.jpg',
@@ -282,7 +282,7 @@ export const services: Service[] = [
       { step: '04', title: 'Inspección', desc: 'Control de calidad y medición de micras.' }
     ],
     images: {
-      hero: '/images/pintura-hero.jpg',
+      hero: '/assets/services/pintura y recubrimiento.webp',
       gallery: [
         '/images/pintura-1.jpg',
         '/images/pintura-2.jpg',
