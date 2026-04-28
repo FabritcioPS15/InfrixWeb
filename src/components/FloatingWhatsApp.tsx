@@ -1,7 +1,7 @@
 
 
 export default function FloatingWhatsApp() {
-  const whatsappNumber = '+51933499243'; // Número actualizado
+  const whatsappNumber = '51981270849'; // Número actualizado
   const whatsappMessage = encodeURIComponent('Hola, me gustaría obtener más información sobre sus servicios.');
 
   return (

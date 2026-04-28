@@ -35,8 +35,8 @@ export default function ContactoPage() {
   };
 
   const contactInfo = [
-    { icon: <Phone size={20} />, label: 'Teléfono', value: '+51 987 654 321' },
-    { icon: <Mail size={20} />, label: 'Email', value: 'contacto@infrix.pe' },
+    { icon: <Phone size={20} />, label: 'Teléfono', value: '+51 981 270 849' },
+    { icon: <Mail size={20} />, label: 'Email', value: 'cotizaciones@kythubx.com' },
     { icon: <MapPin size={20} />, label: 'Oficina', value: 'Av. Industrial 123, Lima, Perú' },
     { icon: <Clock size={20} />, label: 'Horario', value: 'Lun - Sáb: 8:00 - 18:00' }
   ];

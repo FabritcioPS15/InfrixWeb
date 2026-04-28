@@ -39,9 +39,7 @@ export default function InfrixFooter() {
             <h4 className="text-lg font-display font-bold mb-8 uppercase tracking-widest text-white">Enlaces Rápidos</h4>
             <ul className="space-y-4">
               <li><Link to="/" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Inicio</Link></li>
-              <li><Link to="/nosotros" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Nosotros</Link></li>
               <li><Link to="/servicios" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Servicios</Link></li>
-              <li><Link to="/proyectos" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Proyectos</Link></li>
               <li><Link to="/contacto" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Contacto</Link></li>
             </ul>
           </div>
@@ -68,11 +66,11 @@ export default function InfrixFooter() {
               </li>
               <li className="flex items-center space-x-4">
                 <Phone className="text-infrix-orange shrink-0" size={20} />
-                <span className="text-gray-400 text-sm">+51 987 654 321</span>
+                <span className="text-gray-400 text-sm">+51 981 270 849</span>
               </li>
               <li className="flex items-center space-x-4">
                 <Mail className="text-infrix-orange shrink-0" size={20} />
-                <span className="text-gray-400 text-sm">contacto@infrix.pe</span>
+                <span className="text-gray-400 text-sm">cotizaciones@kythubx.com</span>
               </li>
             </ul>
           </div>

@@ -19,8 +19,6 @@ export default function InfrixNavbar() {
   const navLinks = [
     { name: 'Inicio', path: '/' },
     { name: 'Servicios', path: '/servicios' },
-    { name: 'Proyectos', path: '/proyectos' },
-    { name: 'Nosotros', path: '/nosotros' },
     { name: 'Contacto', path: '/contacto' },
   ];
 
@@ -32,11 +30,11 @@ export default function InfrixNavbar() {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone size={14} className="text-infrix-orange" />
-              <span>+51 987 654 321</span>
+              <span>+51 981 270 849</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail size={14} className="text-infrix-orange" />
-              <span>contacto@infrix.pe</span>
+              <span>cotizaciones@kythubx.com</span>
             </div>
           </div>
           <div className="flex items-center space-x-2">

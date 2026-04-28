@@ -34,7 +34,7 @@ export default function Contact() {
 
           <div className="flex flex-col items-center space-y-6 pt-8">
             <a
-              href="https://wa.me/519XXXXXXXX" // Update with real number if available
+              href="https://wa.me/51981270849"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-xl px-12 py-5"
@@ -42,10 +42,10 @@ export default function Contact() {
               Cotizar Ahora
             </a>
             <a
-              href="mailto:contacto@infrix.pe"
+              href="mailto:cotizaciones@kythubx.com"
               className="text-white/60 hover:text-[var(--blue-accent)] transition-colors duration-300 font-medium tracking-widest-2 uppercase text-xs"
             >
-              contacto@infrix.pe
+              cotizaciones@kythubx.com
             </a>
           </div>
         </motion.div>

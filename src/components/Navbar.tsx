@@ -27,11 +27,7 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const navLinks = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Proyectos', path: '/proyectos' },
-    { name: 'Nosotros', path: '/nosotros' },
-  ];
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy-deep/90 backdrop-blur-md border-b border-accent/10">
@@ -105,26 +101,6 @@ export default function Navbar() {
             </div>
 
             {/* Other Static Links */}
-            <NavLink
-              to="/proyectos"
-              className={({ isActive }) =>
-                `text-xs uppercase tracking-[3px] transition-colors duration-300 ${
-                  isActive ? 'text-accent' : 'text-steel-light hover:text-white'
-                }`
-              }
-            >
-              Proyectos
-            </NavLink>
-            <NavLink
-              to="/nosotros"
-              className={({ isActive }) =>
-                `text-xs uppercase tracking-[3px] transition-colors duration-300 ${
-                  isActive ? 'text-accent' : 'text-steel-light hover:text-white'
-                }`
-              }
-            >
-              Nosotros
-            </NavLink>
           </div>
 
           <Link to="/contacto" className="btn-primary py-3 px-8 text-[11px] tracking-[4px]">
@@ -176,13 +152,6 @@ export default function Navbar() {
               </div>
             )}
           </div>
-
-          <NavLink to="/proyectos" onClick={() => setIsOpen(false)} className="text-sm uppercase tracking-widest text-steel-light">
-            Proyectos
-          </NavLink>
-          <NavLink to="/nosotros" onClick={() => setIsOpen(false)} className="text-sm uppercase tracking-widest text-steel-light">
-            Nosotros
-          </NavLink>
           
           <Link
             to="/contacto"

@@ -5,8 +5,6 @@ import InfrixNavbar from './components/InfrixNavbar';
 import InfrixFooter from './components/InfrixFooter';
 import Home from './pages/Home';
 import ServiciosPage from './pages/ServiciosPage';
-import ProyectosPage from './pages/ProyectosPage';
-import NosotrosPage from './pages/NosotrosPage';
 import ContactoPage from './pages/ContactoPage';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ScrollToTop from './components/ScrollToTop';
@@ -41,8 +39,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/servicios" element={<ServiciosPage />} />
-            <Route path="/proyectos" element={<ProyectosPage />} />
-            <Route path="/nosotros" element={<NosotrosPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
             <Route path="/servicios/:serviceId" element={<ServiceDetail />} />
           </Routes>

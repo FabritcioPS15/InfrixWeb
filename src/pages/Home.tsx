@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  CheckCircle2, 
-  ArrowRight, 
-  HardHat, 
-  PenTool, 
-  Zap, 
-  Trophy, 
-  Users, 
+import {
+  CheckCircle2,
+  ArrowRight,
+  HardHat,
+  PenTool,
+  Zap,
+  Trophy,
+  Users,
   Building2,
   Droplets,
   Hammer,
@@ -97,9 +97,9 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative h-screen min-h-[500px] md:min-h-[700px] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/assets/konta/konta_hero_bg_1776979543548.png" 
-            alt="Sitio de Construcción" 
+          <img
+            src="/assets/konta/konta_hero_bg_1776979543548.png"
+            alt="Sitio de Construcción"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-infrix-navy/70 backdrop-blur-[1px]"></div>
@@ -116,18 +116,18 @@ const Home = () => {
               Construyendo Excelencia
             </h5>
             <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-extrabold text-white leading-[1.1] mb-8 uppercase">
-              CONSTRUCCIÓN DE CALIDAD, <br />
-              <span className="text-infrix-orange">IMPRESIONES DURADERAS</span>
+              MÁS QUE CONSTRUCCIÓN <br />
+              <span className="text-infrix-orange">RESULTADOS QUE PERDURAN</span>
             </h1>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/contacto" 
+              <Link
+                to="/contacto"
                 className="bg-infrix-orange text-white px-8 md:px-10 py-4 md:py-5 font-display font-bold uppercase tracking-widest hover:bg-white hover:text-infrix-navy transition-all duration-300 shadow-xl shadow-infrix-orange/20 text-center text-xs md:text-sm"
               >
                 Cotizar Ahora
               </Link>
-              <Link 
-                to="/servicios" 
+              <Link
+                to="/servicios"
                 className="border-2 border-white text-white px-8 md:px-10 py-4 md:py-5 font-display font-bold uppercase tracking-widest hover:bg-white hover:text-infrix-navy transition-all duration-300 text-center text-xs md:text-sm"
               >
                 Ver Servicios
@@ -148,13 +148,13 @@ const Home = () => {
               </h2>
             </div>
             <div className="flex space-x-2 md:space-x-4">
-              <button 
+              <button
                 onClick={prevServices}
                 className="p-4 border border-gray-100 hover:bg-infrix-orange hover:text-white transition-all shadow-lg"
               >
                 <ChevronLeft size={24} />
               </button>
-              <button 
+              <button
                 onClick={nextServices}
                 className="p-4 border border-gray-100 hover:bg-infrix-orange hover:text-white transition-all shadow-lg"
               >
@@ -162,8 +162,8 @@ const Home = () => {
               </button>
             </div>
           </div>
-          
-          <div 
+
+          <div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -180,8 +180,8 @@ const Home = () => {
                 >
                   {/* Background Image that appears on hover */}
                   <div className="absolute inset-0 z-0 overflow-hidden">
-                    <img 
-                      src={service.images.hero} 
+                    <img
+                      src={service.images.hero}
                       alt={service.name}
                       className="w-full h-full object-cover opacity-0 group-hover:opacity-20 group-hover:scale-110 grayscale transition-all duration-1000"
                     />
@@ -198,8 +198,8 @@ const Home = () => {
                       {service.description}
                     </p>
                     <div className="mt-auto pt-6 border-t border-gray-50 group-hover:border-white/10 transition-colors duration-500">
-                      <Link 
-                        to={`/servicios/${service.slug}`} 
+                      <Link
+                        to={`/servicios/${service.slug}`}
                         className="inline-flex items-center text-infrix-navy font-display font-bold text-[10px] tracking-widest uppercase group-hover:text-infrix-orange transition-colors"
                       >
                         Leer Más <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
@@ -210,14 +210,14 @@ const Home = () => {
               ))}
             </AnimatePresence>
           </div>
-          
+
           <div className="mt-12 md:mt-16 text-center">
-             <Link 
-               to="/servicios" 
-               className="bg-infrix-orange hover:bg-infrix-navy text-white px-8 md:px-12 py-4 md:py-5 font-display font-bold uppercase tracking-[2px] transition-all duration-300 shadow-xl shadow-infrix-orange/20 inline-block text-xs md:text-sm"
-             >
-               Ver Todos los Servicios
-             </Link>
+            <Link
+              to="/servicios"
+              className="bg-infrix-orange hover:bg-infrix-navy text-white px-8 md:px-12 py-4 md:py-5 font-display font-bold uppercase tracking-[2px] transition-all duration-300 shadow-xl shadow-infrix-orange/20 inline-block text-xs md:text-sm"
+            >
+              Ver Todos los Servicios
+            </Link>
           </div>
         </div>
       </section>
@@ -232,16 +232,16 @@ const Home = () => {
             className="relative"
           >
             <div className="relative z-10 p-4 bg-white shadow-2xl border border-gray-100">
-              <img 
-                src="/assets/konta/konta_architect_1776979668450.png" 
-                alt="Arquitecto Profesional" 
+              <img
+                src="/assets/konta/konta_architect_1776979668450.png"
+                alt="Arquitecto Profesional"
                 className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-infrix-navy p-6 md:p-12 z-20 shadow-2xl">
               <div className="flex flex-col items-center text-white">
-                <Counter 
-                  value={10} 
+                <Counter
+                  value={10}
                   className="text-4xl md:text-7xl font-display font-extrabold leading-none italic text-infrix-orange"
                 />
                 <span className="text-[8px] md:text-[10px] uppercase tracking-[2px] md:tracking-[4px] font-bold mt-2 md:mt-4 text-white/60 text-center">Años de Liderazgo</span>
@@ -257,14 +257,14 @@ const Home = () => {
             className="space-y-10"
           >
             <div className="space-y-4">
-              <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Nuestra Trayectoria</h5>
+              <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Experiencia consolidada</h5>
               <h2 className="text-4xl md:text-6xl font-display font-extrabold text-infrix-navy leading-tight uppercase">
-                INGENIERÍA QUE <span className="text-infrix-orange">TRANSFORMA</span> EL PAÍS
+                INGENIERÍA DE <span className="text-infrix-orange">NUEVA</span> GENERACIÓN
               </h2>
               <div className="w-16 h-1 bg-infrix-orange" />
             </div>
             <p className="text-gray-600 font-body text-xl leading-relaxed font-normal">
-              Con una década de excelencia técnica, hemos consolidado nuestra presencia en los proyectos más exigentes del Perú, fusionando innovación digital con construcción tradicional.
+              NFRIX representa la evolución de más de una década de experiencia en ingeniería, construcción y gestión integral de proyectos. Como unidad estratégica de KREA & TERRA HUB, integramos capacidad técnica, visión empresarial y ejecución de alto estándar para desarrollar soluciones eficientes, sostenibles y alineadas a las exigencias del mercado actual. Nuestra fortaleza no está en el tiempo de constitución, sino en los resultados que sabemos construir.
             </p>
             <div className="grid sm:grid-cols-2 gap-8">
               {[
@@ -282,12 +282,6 @@ const Home = () => {
               ))}
             </div>
             <div className="pt-6 flex justify-center md:justify-start">
-              <Link 
-                to="/nosotros" 
-                className="bg-infrix-navy text-white px-8 md:px-12 py-4 md:py-5 font-display font-bold uppercase tracking-[2px] hover:bg-infrix-orange transition-all duration-300 shadow-xl shadow-infrix-navy/20 inline-block text-xs md:text-sm text-center"
-              >
-                Conoce Nuestra Historia
-              </Link>
             </div>
           </motion.div>
         </div>
@@ -298,7 +292,7 @@ const Home = () => {
         <div className="absolute inset-0 diagonal-pattern opacity-5" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-16 text-center">
           {stats.map((stat, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -307,9 +301,9 @@ const Home = () => {
               className="flex flex-col items-center space-y-4"
             >
               <div className="text-infrix-orange/60">{stat.icon}</div>
-              <Counter 
-                value={stat.value} 
-                suffix={stat.suffix} 
+              <Counter
+                value={stat.value}
+                suffix={stat.suffix}
                 className="text-6xl md:text-7xl font-display font-extrabold text-white tracking-tighter"
               />
               <span className="text-[10px] uppercase tracking-[4px] text-infrix-orange font-bold">{stat.label}</span>
@@ -325,11 +319,8 @@ const Home = () => {
             <div className="space-y-4">
               <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Hitos</h5>
               <h2 className="text-4xl md:text-6xl font-display font-extrabold text-infrix-navy uppercase">PROYECTOS QUE <span className="text-infrix-orange">INSPIRAN</span></h2>
-              <div className="w-16 h-1 bg-infrix-orange" />
-            </div>
-            <Link to="/proyectos" className="group text-infrix-navy font-display font-bold text-xs tracking-widest uppercase hover:text-infrix-orange transition-colors flex items-center">
-              Explorar Portafolio Completo <ArrowRight size={20} className="ml-3 group-hover:translate-x-3 transition-transform" />
-            </Link>
+            <div className="w-16 h-1 bg-infrix-orange" />
+          </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -342,9 +333,9 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group relative h-[300px] md:h-[600px] overflow-hidden cursor-pointer bg-infrix-navy shadow-2xl"
               >
-                <img 
-                  src={project.img} 
-                  alt={project.title} 
+                <img
+                  src={project.img}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-infrix-navy via-infrix-navy/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
@@ -364,15 +355,15 @@ const Home = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
           <div className="max-w-2xl text-center lg:text-left">
             <h2 className="text-4xl md:text-6xl font-display font-extrabold text-white uppercase leading-tight mb-6">
-              ¿LISTO PARA LLEVAR TU <br/> <span className="text-infrix-navy">PROYECTO AL SIGUIENTE NIVEL?</span>
+              ¿LISTO PARA LLEVAR TU <br /> <span className="text-infrix-navy">PROYECTO AL SIGUIENTE NIVEL?</span>
             </h2>
             <p className="text-white/90 font-body text-lg font-medium tracking-wide">
               Contáctanos hoy mismo para una asesoría técnica especializada y descubre por qué somos la elección número uno en ingeniería de detalle.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-6">
-            <Link 
-              to="/contacto" 
+            <Link
+              to="/contacto"
               className="bg-infrix-navy text-white px-12 py-5 font-display font-bold uppercase tracking-widest hover:bg-white hover:text-infrix-navy transition-all duration-300 shadow-2xl"
             >
               Contactar Ahora
