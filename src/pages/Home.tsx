@@ -169,7 +169,7 @@ const Home = () => {
             onMouseLeave={() => setIsPaused(false)}
           >
             <AnimatePresence mode="popLayout">
-              {getVisibleServices().map((service, idx) => (
+              {getVisibleServices().map((service) => (
                 <motion.div
                   key={service.slug}
                   initial={{ opacity: 0 }}
@@ -264,7 +264,7 @@ const Home = () => {
               <div className="w-16 h-1 bg-infrix-orange" />
             </div>
             <p className="text-gray-600 font-body text-xl leading-relaxed font-normal">
-              NFRIX representa la evolución de más de una década de experiencia en ingeniería, construcción y gestión integral de proyectos. Como unidad estratégica de KREA & TERRA HUB, integramos capacidad técnica, visión empresarial y ejecución de alto estándar para desarrollar soluciones eficientes, sostenibles y alineadas a las exigencias del mercado actual. Nuestra fortaleza no está en el tiempo de constitución, sino en los resultados que sabemos construir.
+              INFRIX representa la evolución de más de una década de experiencia en ingeniería, construcción y gestión integral de proyectos. Como unidad estratégica de KREA & TERRA HUB, integramos capacidad técnica, visión empresarial y ejecución de alto estándar para desarrollar soluciones eficientes, sostenibles y alineadas a las exigencias del mercado actual. Nuestra fortaleza no está en el tiempo de constitución, sino en los resultados que sabemos construir.
             </p>
             <div className="grid sm:grid-cols-2 gap-8">
               {[
