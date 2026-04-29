@@ -233,7 +233,7 @@ const Home = () => {
           >
             <div className="relative z-10 p-4 bg-white shadow-2xl border border-gray-100">
               <img
-                src="/assets/konta/konta_architect_1776979668450.png"
+                src="/assets/services/ConstruccionInfrix.jpeg"
                 alt="Arquitecto Profesional"
                 className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
               />
