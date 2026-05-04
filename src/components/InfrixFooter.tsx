@@ -17,27 +17,19 @@ export default function InfrixFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16 items-start">
           {/* Brand Column */}
           <div className="flex flex-col">
-            <div className="relative h-12 mb-0">
-              <RouterLink to="/" className="absolute bottom-0 left-0 inline-block translate-y-10">
+            <div className="relative h-16 lg:h-12 mb-0">
+              <RouterLink to="/" className="absolute bottom-0 left-0 inline-block translate-y-2 lg:translate-y-10">
                 <img
                   src="/assets/Infrixlogof.png"
                   alt="INFRIX Logo"
-                  className="h-24 md:h-36 w-auto object-contain brightness-0 invert origin-bottom"
+                  className="h-16 md:h-24 lg:h-36 w-auto object-contain brightness-0 invert origin-bottom"
                 />
               </RouterLink>
             </div>
             <div>
-              <p className="text-gray-400 font-display text-[11px] font-bold uppercase tracking-widest leading-relaxed max-w-xs mt-2">
+              <p className="text-gray-400 font-display text-[11px] font-bold uppercase tracking-widest leading-relaxed max-w-xs mt-4">
                 Líderes en el sector construcción con innovación, calidad y excelencia. Construyendo el futuro proyecto a proyecto con integridad.
               </p>
-              <div className="flex items-center space-x-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-infrix-orange transition-colors">
-                  <Facebook size={18} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-infrix-orange transition-colors">
-                  <Linkedin size={18} />
-                </a>
-              </div>
             </div>
           </div>
 
@@ -115,14 +107,14 @@ export default function InfrixFooter() {
               Contacto
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-infrix-orange"></span>
             </h4>
-            <ul className="space-y-6 font-display">
-              <li className="flex items-start space-x-4">
-                <MapPin className="text-infrix-orange shrink-0 mt-1" size={20} />
+            <ul className="space-y-3 font-display">
+              <li className="flex items-start space-x-2">
+                <MapPin className="text-infrix-orange shrink-0 mt-1" size={18} />
                 <span className="text-gray-400 text-[11px] font-bold uppercase tracking-widest leading-relaxed">Lima, Perú</span>
               </li>
               <li className="overflow-hidden">
-                <a href="tel:+51981270849" className="group flex items-center space-x-4 text-gray-400 hover:text-white transition-all duration-300">
-                  <Phone className="text-infrix-orange shrink-0" size={20} />
+                <a href="tel:+51981270849" className="group flex items-center space-x-2 text-gray-400 hover:text-white transition-all duration-300">
+                  <Phone className="text-infrix-orange shrink-0" size={18} />
                   <div className="flex items-center">
                     <span className="mr-0 w-0 opacity-0 group-hover:mr-2 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 text-infrix-orange font-bold text-xs">→</span>
                     <span className="text-[11px] font-bold uppercase tracking-widest group-hover:translate-x-1 transition-transform duration-300">+51 981 270 849</span>
@@ -130,8 +122,8 @@ export default function InfrixFooter() {
                 </a>
               </li>
               <li className="overflow-hidden">
-                <a href="mailto:cotizaciones@kythubx.com" className="group flex items-center space-x-4 text-gray-400 hover:text-white transition-all duration-300">
-                  <Mail className="text-infrix-orange shrink-0" size={20} />
+                <a href="mailto:cotizaciones@kythubx.com" className="group flex items-center space-x-2 text-gray-400 hover:text-white transition-all duration-300">
+                  <Mail className="text-infrix-orange shrink-0" size={18} />
                   <div className="flex items-center">
                     <span className="mr-0 w-0 opacity-0 group-hover:mr-2 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 text-infrix-orange font-bold text-xs">→</span>
                     <span className="text-[11px] font-bold uppercase tracking-widest group-hover:translate-x-1 transition-transform duration-300">cotizaciones@kythubx.com</span>
@@ -139,6 +131,16 @@ export default function InfrixFooter() {
                 </a>
               </li>
             </ul>
+
+            {/* Social Media moved here */}
+            <div className="flex items-center space-x-4 mt-10">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-infrix-orange transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-infrix-orange transition-colors">
+                <Linkedin size={18} />
+              </a>
+            </div>
           </div>
         </div>
 
