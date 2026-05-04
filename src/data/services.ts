@@ -78,7 +78,7 @@ export const services: Service[] = [
       { value: '97%', label: 'Satisfacción total' }
     ],
     process: [
-      { step: '01', title: 'Conceptualización', desc: 'Definición de estilos, colores y texturas.' },
+      { step: '01', title: 'Planteamiento', desc: 'Definición de estilos, colores y texturas.' },
       { step: '02', title: 'Despiece', desc: 'Ingeniería de detalle para corte de precisión.' },
       { step: '03', title: 'Fabricación', desc: 'Procesamiento en planta con maquinaria CNC.' },
       { step: '04', title: 'Ensamblaje', desc: 'Montaje en sitio con ajustes finales de precisión.' }

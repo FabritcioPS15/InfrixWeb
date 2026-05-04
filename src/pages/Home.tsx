@@ -16,7 +16,8 @@ import {
   Mountain,
   Paintbrush,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Globe
 } from 'lucide-react';
 import Counter from '../components/Counter';
 import { services as allServices } from '../data/services';
@@ -54,10 +55,10 @@ const Home = () => {
   };
 
   const stats = [
-    { label: 'Completados', value: 2, suffix: 'k+', icon: <Building2 size={28} /> },
-    { label: 'Miembros', value: 3, suffix: 'k+', icon: <Users size={28} /> },
-    { label: 'Clientes Felices', value: 1.9, suffix: 'k+', icon: <CheckCircle2 size={28} /> },
-    { label: 'Premios', value: 1, suffix: 'k+', icon: <Trophy size={28} /> }
+    { label: 'Años de Experiencia', value: 10, suffix: '+', icon: <Building2 size={28} /> },
+    { label: 'Estándar de Calidad', value: 'ALTO', suffix: '', icon: <Trophy size={28} /> },
+    { label: 'Enfoque Corporativo', value: 'B2B', suffix: '', icon: <Users size={28} /> },
+    { label: 'Cobertura Nacional', value: 'PERÚ', suffix: '', icon: <Globe size={28} /> }
   ];
 
   const projects = [
@@ -259,17 +260,18 @@ const Home = () => {
             <div className="space-y-4">
               <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Experiencia consolidada</h5>
               <h2 className="text-4xl md:text-6xl font-display font-extrabold text-infrix-navy leading-tight uppercase">
-                INGENIERÍA DE <span className="text-infrix-orange">NUEVA</span> GENERACIÓN
+                INGENIERÍA QUE CONSTRUYE <span className="text-infrix-orange">RESULTADOS</span>
               </h2>
               <div className="w-16 h-1 bg-infrix-orange" />
             </div>
             <p className="text-gray-600 font-body text-xl leading-relaxed font-normal">
-              INFRIX representa la evolución de más de una década de experiencia en ingeniería, construcción y gestión integral de proyectos. Como unidad estratégica de KREA & TERRA HUB, integramos capacidad técnica, visión empresarial y ejecución de alto estándar para desarrollar soluciones eficientes, sostenibles y alineadas a las exigencias del mercado actual. Nuestra fortaleza no está en el tiempo de constitución, sino en los resultados que sabemos construir.
+              INFRIX es la unidad de ingeniería y construcción de KREA & TERRA HUB, especializada en Proyectos civiles, electromecánicos y arquitectónicos para el sector corporativo e industrial. Integramos capacidad técnica, visión
+              estratégica y ejecución de alto estándar para desarrollar soluciones eficientes, sostenibles y orientadas a resultados reales. Nuestra fortaleza no está solo en construir obras, sino en generar confianza, valor y cumplimiento en cada proyecto.
             </p>
             <div className="grid sm:grid-cols-2 gap-8">
               {[
                 'Staff de Ingenieros CIP',
-                'Certificación ISO 9001',
+                'Gestión de calidad ',
                 'Metodología BIM 4D',
                 'Seguridad Integral SST'
               ].map((benefit, i) => (
@@ -301,11 +303,17 @@ const Home = () => {
               className="flex flex-col items-center space-y-4"
             >
               <div className="text-infrix-orange/60">{stat.icon}</div>
-              <Counter
-                value={stat.value}
-                suffix={stat.suffix}
-                className="text-6xl md:text-7xl font-display font-extrabold text-white tracking-tighter"
-              />
+              {typeof stat.value === 'number' ? (
+                <Counter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  className="text-5xl md:text-7xl font-display font-extrabold text-white tracking-tighter"
+                />
+              ) : (
+                <span className="text-5xl md:text-7xl font-display font-extrabold text-white tracking-tighter uppercase">
+                  {stat.value}
+                </span>
+              )}
               <span className="text-[10px] uppercase tracking-[4px] text-infrix-orange font-bold">{stat.label}</span>
             </motion.div>
           ))}
@@ -319,8 +327,8 @@ const Home = () => {
             <div className="space-y-4">
               <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Hitos</h5>
               <h2 className="text-4xl md:text-6xl font-display font-extrabold text-infrix-navy uppercase">PROYECTOS QUE <span className="text-infrix-orange">INSPIRAN</span></h2>
-            <div className="w-16 h-1 bg-infrix-orange" />
-          </div>
+              <div className="w-16 h-1 bg-infrix-orange" />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">

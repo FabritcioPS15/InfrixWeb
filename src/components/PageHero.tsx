@@ -26,7 +26,7 @@ const PageHero = ({
       <div className="absolute bottom-8 left-8 w-6 h-6 border-b border-l border-infrix-orange/30" />
       <div className="absolute bottom-8 right-8 w-6 h-6 border-b border-r border-infrix-orange/30" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-28 md:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

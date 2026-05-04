@@ -32,11 +32,11 @@ export default function ServiceDetail() {
   return (
     <div className="bg-white min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center pt-20 overflow-hidden bg-infrix-navy">
+      <section className="relative min-h-[60vh] flex items-center pt-24 md:pt-20 overflow-hidden bg-infrix-navy">
         {/* Background Overlay Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={service.images.hero} 
+          <img
+            src={service.images.hero}
             alt={service.name}
             className="w-full h-full object-cover opacity-30 grayscale"
             onError={(e) => handleImageError(e, service.name)}
@@ -47,7 +47,7 @@ export default function ServiceDetail() {
         {/* Left Vertical Bar */}
         <div className="absolute left-0 top-0 w-1 bg-infrix-orange h-full hidden lg:block" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full z-10 py-16 mt-5">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full z-10 py-16 mt-10 md:mt-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -88,9 +88,9 @@ export default function ServiceDetail() {
 
         {/* Large Faded Number */}
         <div className="absolute right-8 bottom-0 select-none pointer-events-none hidden lg:block">
-           <span className="font-display text-[15rem] text-white/5 font-extrabold leading-none">
-             {service.id}
-           </span>
+          <span className="font-display text-[15rem] text-white/5 font-extrabold leading-none">
+            {service.id}
+          </span>
         </div>
         <div className="absolute top-0 right-0 w-1/3 h-full diagonal-pattern opacity-10"></div>
       </section>
@@ -100,18 +100,18 @@ export default function ServiceDetail() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-16">
           <div className="space-y-4">
             <span className="text-infrix-orange text-[10px] tracking-[4px] uppercase font-bold font-display">Descripción del servicio</span>
-            <h2 className="font-display text-4xl text-infrix-navy font-extrabold uppercase leading-tight">SOLUCIONES CON <br/> <span className="text-infrix-orange">MÁXIMO RIGOR</span></h2>
+            <h2 className="font-display text-4xl text-infrix-navy font-extrabold uppercase leading-tight">SOLUCIONES CON <br /> <span className="text-infrix-orange">MÁXIMO RIGOR</span></h2>
             <p className="text-gray-600 font-body font-normal leading-relaxed text-lg">
               {service.description}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12 py-10">
-              {service.bullets.map((bullet, i) => (
-                <div key={i} className="flex space-x-4 group">
-                  <div className="w-1 h-full bg-infrix-orange group-hover:bg-infrix-navy transition-colors flex-shrink-0" />
-                  <span className="text-infrix-navy font-display text-lg font-bold tracking-widest leading-snug uppercase">{bullet}</span>
-                </div>
-              ))}
+            {service.bullets.map((bullet, i) => (
+              <div key={i} className="flex space-x-4 group">
+                <div className="w-1 h-full bg-infrix-orange group-hover:bg-infrix-navy transition-colors flex-shrink-0" />
+                <span className="text-infrix-navy font-display text-lg font-bold tracking-widest leading-snug uppercase">{bullet}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -121,8 +121,8 @@ export default function ServiceDetail() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-200">
           {service.images.gallery.map((img, i) => (
             <div key={i} className="aspect-video relative group overflow-hidden bg-white">
-              <img 
-                src={img} 
+              <img
+                src={img}
                 alt={`${service.name} ${i + 1}`}
                 className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-[1.05] transition-all duration-700"
                 onError={(e) => handleImageError(e, `Proyecto ${i + 1}`)}
@@ -137,10 +137,10 @@ export default function ServiceDetail() {
       <section className="bg-white py-16 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-             <span className="text-infrix-orange text-[10px] tracking-[4px] uppercase font-bold mb-4 block font-display">Metodología INFRIX</span>
-             <h2 className="font-display text-5xl md:text-6xl text-infrix-navy font-extrabold uppercase">PROCESO DE <span className="text-infrix-orange">TRABAJO</span></h2>
+            <span className="text-infrix-orange text-[10px] tracking-[4px] uppercase font-bold mb-4 block font-display">Metodología INFRIX</span>
+            <h2 className="font-display text-5xl md:text-6xl text-infrix-navy font-extrabold uppercase">PROCESO DE <span className="text-infrix-orange">TRABAJO</span></h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.process.map((step, i) => (
               <div key={i} className="bg-gray-50 p-10 relative group border border-gray-100 hover:bg-infrix-navy hover:text-white transition-all duration-500 h-full shadow-lg">
@@ -161,13 +161,13 @@ export default function ServiceDetail() {
       <section className="bg-gray-50 py-16 px-6 md:px-16 border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-             <h2 className="font-display text-4xl text-infrix-navy font-extrabold uppercase tracking-widest leading-none">SERVICIOS <span className="text-infrix-orange">RELACIONADOS</span></h2>
+            <h2 className="font-display text-4xl text-infrix-navy font-extrabold uppercase tracking-widest leading-none">SERVICIOS <span className="text-infrix-orange">RELACIONADOS</span></h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {relatedServices.map((related, i) => (
-              <Link 
-                key={i} 
+              <Link
+                key={i}
                 to={`/servicios/${related.slug}`}
                 className="group bg-white border border-gray-100 p-12 hover:border-infrix-orange/40 transition-all flex flex-col justify-between shadow-xl"
               >
@@ -193,12 +193,12 @@ export default function ServiceDetail() {
 
       {/* 6. CTA Banner */}
       <div className="bg-white py-12 px-6 border-t border-gray-100 text-center">
-         <Link 
-            to="/contacto" 
-            className="btn-primary inline-block px-12 py-5 shadow-2xl"
-          >
-            SOLICITAR COTIZACIÓN DE {service.name.toUpperCase()}
-          </Link>
+        <Link
+          to="/contacto"
+          className="btn-primary inline-block px-12 py-5 shadow-2xl"
+        >
+          SOLICITAR COTIZACIÓN DE {service.name.toUpperCase()}
+        </Link>
       </div>
     </div>
   );
