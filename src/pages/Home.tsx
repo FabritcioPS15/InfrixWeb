@@ -96,7 +96,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[500px] md:min-h-[700px] flex items-center">
+      <section className="relative h-screen min-h-[500px] md:min-h-[700px] flex items-center pt-20 md:pt-32">
         <div className="absolute inset-0 z-0">
           <img
             src="/assets/konta/konta_hero_bg_1776979543548.png"

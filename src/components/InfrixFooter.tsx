@@ -5,7 +5,7 @@ export default function InfrixFooter() {
   return (
     <footer className="bg-infrix-navy text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
             <Link to="/" className="inline-block">
@@ -45,14 +45,17 @@ export default function InfrixFooter() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-lg font-display font-bold mb-8 uppercase tracking-widest text-white">Servicios</h4>
-            <ul className="space-y-4">
-              <li><Link to="/servicios" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Construcción General</Link></li>
-              <li><Link to="/servicios" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Ingeniería Industrial</Link></li>
-              <li><Link to="/servicios" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Tecnología Inteligente</Link></li>
-              <li><Link to="/servicios" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Diseño de Interiores</Link></li>
-              <li><Link to="/servicios" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Arquitectura</Link></li>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+              <li><Link to="/servicios/drywall-estructuras" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Drywall & Estructuras</Link></li>
+              <li><Link to="/servicios/melamina-muebles" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Melamina y Muebles</Link></li>
+              <li><Link to="/servicios/instalaciones-electricas" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Instalaciones Eléctricas</Link></li>
+              <li><Link to="/servicios/gasfiteria-saneamiento" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Gasfitería y Saneamiento</Link></li>
+              <li><Link to="/servicios/proyectos-civiles-electromecanicos" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Proyectos Civiles y Electromecánicos</Link></li>
+              <li><Link to="/servicios/acabados-arquitectura-interior" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Acabados & Arquitectura Interior</Link></li>
+              <li><Link to="/servicios/campamentos-mineros-industriales" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Campamentos Mineros e Industriales</Link></li>
+              <li><Link to="/servicios/pintura-revestimiento" className="text-gray-400 hover:text-infrix-orange transition-colors text-sm font-medium">Pintura & Revestimiento</Link></li>
             </ul>
           </div>
 
