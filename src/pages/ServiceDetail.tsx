@@ -66,7 +66,7 @@ export default function ServiceDetail() {
               Especialidad Técnica
             </span>
 
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide text-white font-extrabold leading-[1] mb-6 uppercase">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-wide text-white font-extrabold leading-[1.1] mb-6 uppercase">
               {service.name}
             </h1>
 
@@ -75,10 +75,10 @@ export default function ServiceDetail() {
             </p>
 
             {/* Stats Row */}
-            <div className="flex flex-wrap gap-x-12 gap-y-6 mt-10 pt-8 border-t border-white/10">
+            <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-8 md:gap-x-12 gap-y-6 mt-10 pt-8 border-t border-white/10">
               {service.stats.map((stat, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="font-display text-3xl text-infrix-orange font-bold uppercase">{stat.value}</span>
+                  <span className="font-display text-2xl md:text-3xl text-infrix-orange font-bold uppercase">{stat.value}</span>
                   <span className="text-gray-400 text-[9px] tracking-[2px] uppercase mt-1 font-bold font-display">{stat.label}</span>
                 </div>
               ))}
@@ -109,7 +109,7 @@ export default function ServiceDetail() {
             {service.bullets.map((bullet, i) => (
               <div key={i} className="flex space-x-4 group">
                 <div className="w-1 h-full bg-infrix-orange group-hover:bg-infrix-navy transition-colors flex-shrink-0" />
-                <span className="text-infrix-navy font-display text-lg font-bold tracking-widest leading-snug uppercase">{bullet}</span>
+                <span className="text-infrix-navy font-display text-base md:text-lg font-bold tracking-widest leading-snug uppercase">{bullet}</span>
               </div>
             ))}
           </div>
@@ -143,11 +143,11 @@ export default function ServiceDetail() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.process.map((step, i) => (
-              <div key={i} className="bg-gray-50 p-10 relative group border border-gray-100 hover:bg-infrix-navy hover:text-white transition-all duration-500 h-full shadow-lg">
-                <span className="font-display text-6xl text-infrix-orange font-extrabold mb-6 block group-hover:scale-110 transition-transform origin-left italic">
+              <div key={i} className="bg-gray-50 p-6 md:p-10 relative group border border-gray-100 hover:bg-infrix-navy hover:text-white transition-all duration-500 h-full shadow-lg">
+                <span className="font-display text-5xl md:text-6xl text-infrix-orange font-extrabold mb-4 md:mb-6 block group-hover:scale-110 transition-transform origin-left italic">
                   {step.step}
                 </span>
-                <h3 className="font-display text-2xl text-infrix-navy group-hover:text-white mb-4 tracking-widest font-bold uppercase">{step.title}</h3>
+                <h3 className="font-display text-xl md:text-2xl text-infrix-navy group-hover:text-white mb-4 tracking-widest font-bold uppercase">{step.title}</h3>
                 <p className="text-gray-500 group-hover:text-gray-300 text-sm font-body font-normal leading-relaxed">
                   {step.desc}
                 </p>
@@ -169,14 +169,14 @@ export default function ServiceDetail() {
               <Link
                 key={i}
                 to={`/servicios/${related.slug}`}
-                className="group bg-white border border-gray-100 p-12 hover:border-infrix-orange/40 transition-all flex flex-col justify-between shadow-xl"
+                className="group bg-white border border-gray-100 p-8 md:p-12 hover:border-infrix-orange/40 transition-all flex flex-col justify-between shadow-xl"
               >
                 <div className="space-y-6">
-                  <span className="text-infrix-orange font-display text-4xl font-extrabold opacity-20 group-hover:opacity-100 transition-opacity">
+                  <span className="text-infrix-orange font-display text-3xl md:text-4xl font-extrabold opacity-20 group-hover:opacity-100 transition-opacity">
                     {related.id}
                   </span>
                   <div className="space-y-2">
-                    <h3 className="font-display text-3xl text-infrix-navy font-bold uppercase tracking-widest group-hover:text-infrix-orange transition-colors">{related.name}</h3>
+                    <h3 className="font-display text-2xl md:text-3xl text-infrix-navy font-bold uppercase tracking-widest group-hover:text-infrix-orange transition-colors">{related.name}</h3>
                     <p className="text-gray-500 text-sm font-body font-normal line-clamp-2 italic">
                       "{related.tagline}"
                     </p>

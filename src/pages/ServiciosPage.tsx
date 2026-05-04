@@ -81,7 +81,7 @@ export default function ServiciosPage() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-12 md:p-16 lg:p-20 relative group overflow-hidden transition-all duration-700 hover:bg-infrix-navy"
+              className="bg-white p-8 md:p-16 lg:p-20 relative group overflow-hidden transition-all duration-700 hover:bg-infrix-navy"
             >
               {/* Background Image that appears on hover */}
               <div className="absolute inset-0 z-0 overflow-hidden">
@@ -93,7 +93,7 @@ export default function ServiciosPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-infrix-navy via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700" />
               </div>
 
-              <span className="absolute top-8 right-8 font-display text-8xl text-infrix-navy opacity-[0.03] select-none group-hover:opacity-[0.1] group-hover:text-white transition-all duration-500 uppercase">
+              <span className="absolute top-4 right-4 md:top-8 md:right-8 font-display text-6xl md:text-8xl text-infrix-navy opacity-[0.03] select-none group-hover:opacity-[0.1] group-hover:text-white transition-all duration-500 uppercase">
                 {service.id}
               </span>
 

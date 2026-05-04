@@ -116,7 +116,7 @@ const Home = () => {
             <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[2px] md:tracking-[4px] mb-4 text-xs md:text-base">
               Construyendo Excelencia
             </h5>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-extrabold text-white leading-[1.1] mb-8 uppercase">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold text-white leading-[1.1] mb-8 uppercase">
               MÁS QUE CONSTRUCCIÓN <br />
               <span className="text-infrix-orange">RESULTADOS QUE PERDURAN</span>
             </h1>
@@ -141,14 +141,14 @@ const Home = () => {
       {/* 3-by-3 Oscillating Services Section */}
       <section className="py-16 md:py-24 bg-white px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-8">
             <div className="space-y-4">
               <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px] text-xs md:text-base">Especialidades</h5>
               <h2 className="text-3xl md:text-5xl font-display font-extrabold text-infrix-navy uppercase leading-tight">
                 NUESTROS SERVICIOS <span className="text-infrix-orange">PREMIUM</span>
               </h2>
             </div>
-            <div className="flex space-x-2 md:space-x-4">
+            <div className="flex space-x-2 md:space-x-4 self-end md:self-auto">
               <button
                 onClick={prevServices}
                 className="p-4 border border-gray-100 hover:bg-infrix-orange hover:text-white transition-all shadow-lg"
@@ -239,16 +239,17 @@ const Home = () => {
                 className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-infrix-navy p-6 md:p-12 z-20 shadow-2xl">
+            <div className="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-10 bg-infrix-navy p-6 md:p-12 z-20 shadow-2xl">
               <div className="flex flex-col items-center text-white">
                 <Counter
                   value={10}
+                  suffix="+"
                   className="text-4xl md:text-7xl font-display font-extrabold leading-none italic text-infrix-orange"
                 />
-                <span className="text-[8px] md:text-[10px] uppercase tracking-[2px] md:tracking-[4px] font-bold mt-2 md:mt-4 text-white/60 text-center">Años de Liderazgo</span>
+                <span className="text-[10px] md:text-[10px] uppercase tracking-[2px] md:tracking-[4px] font-bold mt-2 md:mt-4 text-white/60 text-center">Años de Liderazgo</span>
               </div>
             </div>
-            <div className="absolute -top-10 -left-10 w-64 h-64 diagonal-pattern opacity-10 z-0"></div>
+            <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-32 h-32 md:w-64 md:h-64 diagonal-pattern opacity-10 z-0"></div>
           </motion.div>
 
           <motion.div
@@ -292,7 +293,7 @@ const Home = () => {
       {/* Stats Counter */}
       <section className="py-24 bg-infrix-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 diagonal-pattern opacity-5" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-16 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16 text-center">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -323,7 +324,7 @@ const Home = () => {
       {/* Projects Gallery */}
       <section className="py-16 md:py-32 bg-white px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-8">
             <div className="space-y-4">
               <h5 className="text-infrix-orange font-display font-bold uppercase tracking-[3px]">Hitos</h5>
               <h2 className="text-4xl md:text-6xl font-display font-extrabold text-infrix-navy uppercase">PROYECTOS QUE <span className="text-infrix-orange">INSPIRAN</span></h2>
