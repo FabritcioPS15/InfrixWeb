@@ -40,9 +40,9 @@ export const services: Service[] = [
       'Sistemas acústicos y térmicos'
     ],
     stats: [
-      { value: '500+', label: 'Proyectos ejecutados' },
-      { value: '12', label: 'Años de especialidad' },
-      { value: '98%', label: 'Satisfacción de clientes' }
+      { value: '10+', label: 'Años de Experiencia' },
+      { value: 'Calidad', label: 'En cada detalle' },
+      { value: 'Confianza', label: 'En cada entrega' }
     ],
     process: [
       { step: '01', title: 'Evaluación', desc: 'Visita técnica y levantamiento de información en campo.' },
@@ -53,9 +53,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/Drywall y estructuras.jpeg',
       gallery: [
-        '/images/drywall-1.jpg',
-        '/images/drywall-2.jpg',
-        '/images/drywall-3.jpg'
+        '/assets/services/Drywall & Estructuras/WhatsApp Image 2026-05-04 at 17.23.19 (6).jpeg',
+        '/assets/services/Drywall & Estructuras/WhatsApp Image 2026-05-04 at 17.23.19 (7).jpeg',
+        '/assets/services/Drywall & Estructuras/WhatsApp Image 2026-05-04 at 17.23.19 (8).jpeg'
       ]
     },
     relatedServices: ['melamina-muebles', 'acabados-arquitectura-interior']
@@ -73,9 +73,9 @@ export const services: Service[] = [
       'Acabados en melamina premium'
     ],
     stats: [
-      { value: '300+', label: 'Ambientes creados' },
-      { value: '8', label: 'Años de experiencia' },
-      { value: '97%', label: 'Satisfacción total' }
+      { value: 'Diseño', label: 'A medida' },
+      { value: 'Funcionalidad', label: 'En cada espacio' },
+      { value: 'Alto', label: 'Estándar de acabados' }
     ],
     process: [
       { step: '01', title: 'Planteamiento', desc: 'Definición de estilos, colores y texturas.' },
@@ -86,9 +86,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/Melamine y muebles.jpeg',
       gallery: [
-        '/images/melamina-1.jpg',
-        '/images/melamina-2.jpg',
-        '/images/melamina-3.jpg'
+        '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (14).jpeg',
+        '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (3).jpeg',
+        '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (4).jpeg'
       ]
     },
     relatedServices: ['drywall-estructuras', 'acabados-arquitectura-interior']
@@ -106,9 +106,9 @@ export const services: Service[] = [
       'Puesta a tierra y protecciones'
     ],
     stats: [
-      { value: '200+', label: 'Instalaciones' },
-      { value: '15', label: 'Años de trayectoria' },
-      { value: '99%', label: 'Seguridad garantizada' }
+      { value: 'Seguridad', label: 'Operativa total' },
+      { value: 'Cumplimiento', label: 'Normativo y técnico' },
+      { value: 'SST', label: 'Prevención y control' }
     ],
     process: [
       { step: '01', title: 'Diagnóstico', desc: 'Análisis de carga y estado de redes existentes.' },
@@ -119,9 +119,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/Instalaciones-electricas.jpg',
       gallery: [
-        '/images/electricas-1.jpg',
-        '/images/electricas-2.jpg',
-        '/images/electricas-3.jpg'
+        '/assets/services/Instalaciones Eléctricas/WhatsApp Image 2026-05-04 at 17.23.19 (17).jpeg',
+        '/assets/services/Instalaciones Eléctricas/WhatsApp Image 2026-05-04 at 17.23.20 (2).jpeg',
+        '/assets/services/Instalaciones Eléctricas/WhatsApp Image 2026-05-04 at 17.23.20 (4).jpeg'
       ]
     },
     relatedServices: ['gasfiteria-saneamiento', 'proyectos-civiles-electromecanicos']
@@ -139,9 +139,9 @@ export const services: Service[] = [
       'Instalaciones sanitarias'
     ],
     stats: [
-      { value: '180+', label: 'Obras entregadas' },
-      { value: '10', label: 'Años de especialidad' },
-      { value: '98%', label: 'Cero filtraciones' }
+      { value: 'Eficiencia', label: 'Hidráulica total' },
+      { value: 'Cero', label: 'Filtraciones críticas' },
+      { value: 'Cumplimiento', label: 'Técnico y normativo' }
     ],
     process: [
       { step: '01', title: 'Replanteo', desc: 'Validación de trazado de redes en obra.' },
@@ -152,9 +152,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/Gasfiteria y saneamiento.jpeg',
       gallery: [
-        '/images/gasfiteria-1.jpg',
-        '/images/gasfiteria-2.jpg',
-        '/images/gasfiteria-3.jpg'
+        '/assets/services/Gasfitería y Saneamiento/WhatsApp Image 2026-05-04 at 17.23.19 (12).jpeg',
+        '/assets/services/Gasfitería y Saneamiento/WhatsApp Image 2026-05-04 at 17.23.19.jpeg',
+        '/assets/services/Gasfitería y Saneamiento/WhatsApp Image 2026-05-04 at 17.23.20 (1).jpeg'
       ]
     },
     relatedServices: ['instalaciones-electricas', 'proyectos-civiles-electromecanicos']
@@ -172,9 +172,9 @@ export const services: Service[] = [
       'Ingeniería estructural'
     ],
     stats: [
-      { value: '80+', label: 'Megaproyectos' },
-      { value: '20', label: 'Años de liderazgo' },
-      { value: '97%', label: 'Eficiencia técnica' }
+      { value: 'Ejecución', label: 'Integral de proyectos' },
+      { value: 'Calidad', label: 'De alto estándar' },
+      { value: 'Cobertura', label: 'Operativa a nivel nacional' }
     ],
     process: [
       { step: '01', title: 'Anteproyecto', desc: 'Estudios de suelos y cálculo estructural básico.' },
@@ -185,9 +185,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/Proyectos Civiles.jpeg',
       gallery: [
-        '/images/civiles-1.jpg',
-        '/images/civiles-2.jpg',
-        '/images/civiles-3.jpg'
+        '/assets/services/Proyectos Civiles y Electromecánicos/WhatsApp Image 2026-05-04 at 17.23.19 (16).jpeg',
+        '/assets/services/Proyectos Civiles y Electromecánicos/WhatsApp Image 2026-05-04 at 17.23.19 (18).jpeg',
+        '/assets/services/Proyectos Civiles y Electromecánicos/WhatsApp Image 2026-05-04 at 17.23.20 (3).jpeg'
       ]
     },
     relatedServices: ['campamentos-mineros-industriales', 'instalaciones-electricas']
@@ -205,9 +205,9 @@ export const services: Service[] = [
       'Acabados de alta gama'
     ],
     stats: [
-      { value: '400+', label: 'Ambientes' },
-      { value: '10', label: 'Años de detalle' },
-      { value: '99%', label: 'Excelencia estética' }
+      { value: 'Diseño', label: 'Funcional y estético' },
+      { value: 'Precisión', label: 'En cada acabado' },
+      { value: 'Espacios', label: 'Alto impacto' }
     ],
     process: [
       { step: '01', title: 'Selección', desc: 'Asesoría en la elección de materiales y marcas.' },
@@ -218,9 +218,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/Acabados y arquitectura.jpeg',
       gallery: [
-        '/images/acabados-1.jpg',
-        '/images/acabados-2.jpg',
-        '/images/acabados-3.jpg'
+        '/assets/services/Acabados & Arquitectura Interior/WhatsApp Image 2026-05-04 at 17.23.19 (10).jpeg',
+        '/assets/services/Acabados & Arquitectura Interior/WhatsApp Image 2026-05-04 at 17.23.19 (5).jpeg',
+        '/assets/services/Acabados & Arquitectura Interior/WhatsApp Image 2026-05-04 at 17.23.19 (9).jpeg'
       ]
     },
     relatedServices: ['drywall-estructuras', 'pintura-revestimiento']
@@ -238,9 +238,9 @@ export const services: Service[] = [
       'Campamentos temporales y permanentes'
     ],
     stats: [
-      { value: '60+', label: 'Campamentos' },
-      { value: '15', label: 'Años de logística' },
-      { value: '98%', label: 'Habitabilidad total' }
+      { value: 'Instalación', label: 'Rápida y eficiente' },
+      { value: 'Habitabilidad', label: 'Segura y funcional' },
+      { value: 'Soluciones', label: 'Modulares industriales' }
     ],
     process: [
       { step: '01', title: 'Logística', desc: 'Plan de transporte a zonas de difícil acceso.' },
@@ -251,9 +251,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/Campamentos Minerales.jpeg',
       gallery: [
-        '/images/campamentos-1.jpg',
-        '/images/campamentos-2.jpg',
-        '/images/campamentos-3.jpg'
+        '/assets/services/Campamentos Mineros e Industriales/WhatsApp Image 2026-05-04 at 17.23.19 (1).jpeg',
+        '/assets/services/Campamentos Mineros e Industriales/WhatsApp Image 2026-05-04 at 17.23.19 (11).jpeg',
+        '/assets/services/Campamentos Mineros e Industriales/WhatsApp Image 2026-05-04 at 17.23.19 (13).jpeg'
       ]
     },
     relatedServices: ['proyectos-civiles-electromecanicos', 'gasfiteria-saneamiento']
@@ -271,9 +271,9 @@ export const services: Service[] = [
       'Texturas y acabados'
     ],
     stats: [
-      { value: '600+', label: 'Proyectos' },
-      { value: '12', label: 'Años de protección' },
-      { value: '98%', label: 'Resistencia probada' }
+      { value: 'Acabados', label: 'De alto estandar' },
+      { value: 'Precisión', label: 'En cada detalle' },
+      { value: 'Superficies', label: 'Que generan valor' }
     ],
     process: [
       { step: '01', title: 'Limpieza', desc: 'Preparación de superficie y eliminación de impurezas.' },
@@ -284,9 +284,9 @@ export const services: Service[] = [
     images: {
       hero: '/assets/services/pintura y recubrimiento.webp',
       gallery: [
-        '/images/pintura-1.jpg',
-        '/images/pintura-2.jpg',
-        '/images/pintura-3.jpg'
+        '/assets/services/Pintura & Revestimiento/WhatsApp Image 2026-05-04 at 17.23.19 (15).jpeg',
+        '/assets/services/Pintura & Revestimiento/WhatsApp Image 2026-05-04 at 17.23.19 (2).jpeg',
+        '/assets/services/Pintura & Revestimiento/WhatsApp Image 2026-05-04 at 17.23.20.jpeg'
       ]
     },
     relatedServices: ['acabados-arquitectura-interior', 'drywall-estructuras']

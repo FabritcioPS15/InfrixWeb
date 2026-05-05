@@ -14,7 +14,7 @@ export default function InfrixFooter() {
   return (
     <footer className="bg-infrix-navy text-white pt-10 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16 items-start">
           {/* Brand Column */}
           <div className="flex flex-col">
             <div className="relative h-16 lg:h-12 mb-0">
@@ -27,7 +27,7 @@ export default function InfrixFooter() {
               </RouterLink>
             </div>
             <div>
-              <p className="text-gray-400 font-display text-[11px] font-bold uppercase tracking-widest leading-relaxed max-w-xs mt-4">
+              <p className="text-gray-400 font-display text-[10px] font-bold uppercase tracking-widest leading-relaxed max-w-xs mt-4">
                 Líderes en el sector construcción con innovación, calidad y excelencia. Construyendo el futuro proyecto a proyecto con integridad.
               </p>
             </div>
@@ -35,7 +35,7 @@ export default function InfrixFooter() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-display font-bold mb-6 uppercase tracking-widest text-white relative inline-block h-8 flex items-center">
+            <h4 className="text-lg font-display font-bold mb-4 uppercase tracking-widest text-white relative inline-block h-8 flex items-center">
               <LinkIcon className="text-infrix-orange mr-3" size={20} />
               Enlaces
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-infrix-orange"></span>
@@ -49,7 +49,7 @@ export default function InfrixFooter() {
                 <li key={link.path} className="overflow-hidden">
                   <RouterLink
                     to={link.path}
-                    className="group flex items-center text-gray-400 hover:text-white transition-all duration-300 text-[11px] font-bold tracking-widest uppercase"
+                    className="group flex items-center text-gray-400 hover:text-white transition-all duration-300 text-[10px] font-bold tracking-widest uppercase"
                   >
                     <span className="mr-0 w-0 opacity-0 group-hover:mr-3 group-hover:w-4 group-hover:opacity-100 transition-all duration-300 text-infrix-orange">
                       →
@@ -65,7 +65,7 @@ export default function InfrixFooter() {
 
           {/* Services */}
           <div className="lg:col-span-2">
-            <div className="text-left w-full mb-6">
+            <div className="text-left w-full mb-4">
               <h4 className="text-lg font-display font-bold uppercase tracking-widest text-white relative inline-block h-8 flex items-center">
                 <Briefcase className="text-infrix-orange mr-3" size={20} />
                 Servicios
@@ -86,7 +86,7 @@ export default function InfrixFooter() {
                 <li key={service.slug} className="overflow-hidden">
                   <RouterLink
                     to={`/servicios/${service.slug}`}
-                    className="group flex items-center text-gray-400 hover:text-white transition-all duration-300 text-[11px] font-bold tracking-widest uppercase"
+                    className="group flex items-center text-gray-400 hover:text-white transition-all duration-300 text-[10px] font-bold tracking-widest uppercase"
                   >
                     <span className="mr-0 w-0 opacity-0 group-hover:mr-3 group-hover:w-4 group-hover:opacity-100 transition-all duration-300 text-infrix-orange">
                       →
@@ -102,7 +102,7 @@ export default function InfrixFooter() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-display font-bold mb-6 uppercase tracking-widest text-white relative inline-block h-8 flex items-center">
+            <h4 className="text-lg font-display font-bold mb-4 uppercase tracking-widest text-white relative inline-block h-8 flex items-center">
               <MessageSquare className="text-infrix-orange mr-3" size={20} />
               Contacto
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-infrix-orange"></span>
@@ -110,14 +110,14 @@ export default function InfrixFooter() {
             <ul className="space-y-3 font-display">
               <li className="flex items-start space-x-2">
                 <MapPin className="text-infrix-orange shrink-0 mt-1" size={18} />
-                <span className="text-gray-400 text-[11px] font-bold uppercase tracking-widest leading-relaxed">Lima, Perú</span>
+                <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest leading-relaxed">Lima, Perú</span>
               </li>
               <li className="overflow-hidden">
                 <a href="tel:+51981270849" className="group flex items-center space-x-2 text-gray-400 hover:text-white transition-all duration-300">
                   <Phone className="text-infrix-orange shrink-0" size={18} />
                   <div className="flex items-center">
                     <span className="mr-0 w-0 opacity-0 group-hover:mr-2 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 text-infrix-orange font-bold text-xs">→</span>
-                    <span className="text-[11px] font-bold uppercase tracking-widest group-hover:translate-x-1 transition-transform duration-300">+51 981 270 849</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest group-hover:translate-x-1 transition-transform duration-300">+51 981 270 849</span>
                   </div>
                 </a>
               </li>
@@ -126,7 +126,7 @@ export default function InfrixFooter() {
                   <Mail className="text-infrix-orange shrink-0" size={18} />
                   <div className="flex items-center">
                     <span className="mr-0 w-0 opacity-0 group-hover:mr-2 group-hover:w-3 group-hover:opacity-100 transition-all duration-300 text-infrix-orange font-bold text-xs">→</span>
-                    <span className="text-[11px] font-bold uppercase tracking-widest group-hover:translate-x-1 transition-transform duration-300">cotizaciones@kythubx.com</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest group-hover:translate-x-1 transition-transform duration-300">cotizaciones@kythubx.com</span>
                   </div>
                 </a>
               </li>
