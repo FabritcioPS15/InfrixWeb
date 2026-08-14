@@ -20,7 +20,7 @@ export default function InfrixFooter() {
             <div className="relative h-16 lg:h-12 mb-0">
               <RouterLink to="/" className="absolute bottom-0 left-0 inline-block translate-y-2 lg:translate-y-10">
                 <img
-                  src="/assets/Infrixlogof.png"
+                  src="/assets/Infrixlogof.webp"
                   alt="INFRIX Logo"
                   className="h-16 md:h-24 lg:h-36 w-auto object-contain brightness-0 invert origin-bottom"
                 />

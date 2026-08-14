@@ -64,17 +64,17 @@ const Home = () => {
   const projects = [
     {
       title: 'Construcción General',
-      img: '/assets/konta/konta_project_construction_1776979709246.png',
+      img: '/assets/konta/konta_project_construction_1776979709246.webp',
       category: 'Industrial'
     },
     {
       title: 'Arquitectura',
-      img: '/assets/konta/konta_project_architecture_1776979728586.png',
+      img: '/assets/konta/konta_project_architecture_1776979728586.webp',
       category: 'Corporativo'
     },
     {
       title: 'Diseño de Interiores',
-      img: '/assets/konta/konta_project_interior_1776979743858.png',
+      img: '/assets/konta/konta_project_interior_1776979743858.webp',
       category: 'Comercial'
     }
   ];
@@ -99,9 +99,11 @@ const Home = () => {
       <section className="relative h-screen min-h-[500px] md:min-h-[700px] flex items-center pt-20 md:pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="/assets/konta/konta_hero_bg_1776979543548.png"
+            src="/assets/konta/konta_hero_bg_1776979543548.webp"
             alt="Sitio de Construcción"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-infrix-navy/70 backdrop-blur-[1px]"></div>
         </div>
@@ -184,6 +186,8 @@ const Home = () => {
                     <img
                       src={service.images.hero}
                       alt={service.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover opacity-0 group-hover:opacity-20 group-hover:scale-110 grayscale transition-all duration-1000"
                     />
                   </div>
@@ -234,8 +238,10 @@ const Home = () => {
           >
             <div className="relative z-10 p-4 bg-white shadow-2xl border border-gray-100">
               <img
-                src="/assets/services/ConstruccionInfrix.jpeg"
+                src="/assets/services/ConstruccionInfrix.webp"
                 alt="Arquitecto Profesional"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
@@ -345,6 +351,8 @@ const Home = () => {
                 <img
                   src={project.img}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-infrix-navy via-infrix-navy/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />

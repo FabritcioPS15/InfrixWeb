@@ -88,6 +88,8 @@ export default function ServiciosPage() {
                 <img 
                   src={service.images.hero} 
                   alt={service.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover opacity-0 group-hover:opacity-20 group-hover:scale-110 grayscale transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-infrix-navy via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700" />

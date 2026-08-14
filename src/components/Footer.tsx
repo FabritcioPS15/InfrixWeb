@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start space-y-4">
           <Link to="/" className="block">
             <img 
-              src="/assets/InfrixPng.png" 
+              src="/assets/InfrixPng.webp" 
               alt="INFRIX Logo" 
               className="h-16 w-auto object-contain brightness-0 invert" 
             />

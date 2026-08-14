@@ -124,6 +124,8 @@ export default function ServiceDetail() {
               <img
                 src={img}
                 alt={`${service.name} ${i + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-[1.05] transition-all duration-700"
                 onError={(e) => handleImageError(e, `Proyecto ${i + 1}`)}
               />

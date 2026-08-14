@@ -51,7 +51,7 @@ export const services: Service[] = [
       { step: '04', title: 'Entrega', desc: 'Control de calidad final y entrega de obra limpia.' }
     ],
     images: {
-      hero: '/assets/services/Drywall y estructuras.jpeg',
+      hero: '/assets/services/Drywall y estructuras.webp',
       gallery: [
         '/assets/services/Drywall & Estructuras/WhatsApp Image 2026-05-04 at 17.23.19 (6).jpeg',
         '/assets/services/Drywall & Estructuras/WhatsApp Image 2026-05-04 at 17.23.19 (7).jpeg',
@@ -84,7 +84,7 @@ export const services: Service[] = [
       { step: '04', title: 'Ensamblaje', desc: 'Montaje en sitio con ajustes finales de precisión.' }
     ],
     images: {
-      hero: '/assets/services/Melamine y muebles.jpeg',
+      hero: '/assets/services/Melamine y muebles.webp',
       gallery: [
         '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (14).jpeg',
         '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (3).jpeg',
@@ -117,7 +117,7 @@ export const services: Service[] = [
       { step: '04', title: 'Pruebas', desc: 'Protocolos de prueba y certificación de operatividad.' }
     ],
     images: {
-      hero: '/assets/services/Instalaciones-electricas.jpg',
+      hero: '/assets/services/Instalaciones-electricas.webp',
       gallery: [
         '/assets/services/Instalaciones Eléctricas/WhatsApp Image 2026-05-04 at 17.23.19 (17).jpeg',
         '/assets/services/Instalaciones Eléctricas/WhatsApp Image 2026-05-04 at 17.23.20 (2).jpeg',
@@ -150,7 +150,7 @@ export const services: Service[] = [
       { step: '04', title: 'Presión', desc: 'Pruebas de estanqueidad y presión hidráulica.' }
     ],
     images: {
-      hero: '/assets/services/Gasfiteria y saneamiento.jpeg',
+      hero: '/assets/services/Gasfiteria y saneamiento.webp',
       gallery: [
         '/assets/services/Gasfitería y Saneamiento/WhatsApp Image 2026-05-04 at 17.23.19 (12).jpeg',
         '/assets/services/Gasfitería y Saneamiento/WhatsApp Image 2026-05-04 at 17.23.19.jpeg',
@@ -183,7 +183,7 @@ export const services: Service[] = [
       { step: '04', title: 'Comisionamiento', desc: 'Pruebas de funcionamiento de sistemas integrados.' }
     ],
     images: {
-      hero: '/assets/services/Proyectos Civiles.jpeg',
+      hero: '/assets/services/Proyectos Civiles.webp',
       gallery: [
         '/assets/services/Proyectos Civiles y Electromecánicos/WhatsApp Image 2026-05-04 at 17.23.19 (16).jpeg',
         '/assets/services/Proyectos Civiles y Electromecánicos/WhatsApp Image 2026-05-04 at 17.23.19 (18).jpeg',
@@ -216,7 +216,7 @@ export const services: Service[] = [
       { step: '04', title: 'Pulido', desc: 'Limpieza fina y tratamiento protector de superficies.' }
     ],
     images: {
-      hero: '/assets/services/Acabados y arquitectura.jpeg',
+      hero: '/assets/services/Acabados y arquitectura.webp',
       gallery: [
         '/assets/services/Acabados & Arquitectura Interior/WhatsApp Image 2026-05-04 at 17.23.19 (10).jpeg',
         '/assets/services/Acabados & Arquitectura Interior/WhatsApp Image 2026-05-04 at 17.23.19 (5).jpeg',
@@ -249,7 +249,7 @@ export const services: Service[] = [
       { step: '04', title: 'Equipamiento', desc: 'Habilitación de mobiliario y servicios críticos.' }
     ],
     images: {
-      hero: '/assets/services/Campamentos Minerales.jpeg',
+      hero: '/assets/services/Campamentos Minerales.webp',
       gallery: [
         '/assets/services/Campamentos Mineros e Industriales/WhatsApp Image 2026-05-04 at 17.23.19 (1).jpeg',
         '/assets/services/Campamentos Mineros e Industriales/WhatsApp Image 2026-05-04 at 17.23.19 (11).jpeg',

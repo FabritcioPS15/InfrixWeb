@@ -54,7 +54,7 @@ export default function InfrixNavbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
-              src="/assets/Infrixlogo.png" 
+              src="/assets/Infrixlogo.webp" 
               alt="INFRIX Logo" 
               className="h-12 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
