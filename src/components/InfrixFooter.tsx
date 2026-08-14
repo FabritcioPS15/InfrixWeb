@@ -44,7 +44,8 @@ export default function InfrixFooter() {
               {[
                 { name: 'Inicio', path: '/' },
                 { name: 'Servicios', path: '/servicios' },
-                { name: 'Contacto', path: '/contacto' }
+                { name: 'Contacto', path: '/contacto' },
+                { name: 'Trabaja con Nosotros', path: '/trabaja-con-nosotros' }
               ].map((link) => (
                 <li key={link.path} className="overflow-hidden">
                   <RouterLink

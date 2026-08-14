@@ -78,12 +78,20 @@ export default function InfrixNavbar() {
               ))}
             </div>
 
-            <Link 
-              to="/contacto" 
-              className="bg-infrix-orange text-white px-8 py-3 text-[11px] tracking-[2px] font-display font-bold uppercase hover:bg-infrix-navy transition-all duration-300 shadow-lg shadow-infrix-orange/20"
-            >
-              Cotizar Proyecto
-            </Link>
+            <div className="flex items-center space-x-4">
+              <Link
+                to="/trabaja-con-nosotros"
+                className="border-2 border-infrix-navy text-infrix-navy px-6 py-3 text-[11px] tracking-[2px] font-display font-bold uppercase hover:bg-infrix-navy hover:text-white transition-all duration-300"
+              >
+                Trabaja con Nosotros
+              </Link>
+              <Link
+                to="/contacto"
+                className="bg-infrix-orange text-white px-8 py-3 text-[11px] tracking-[2px] font-display font-bold uppercase hover:bg-infrix-navy transition-all duration-300 shadow-lg shadow-infrix-orange/20"
+              >
+                Cotizar Proyecto
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
@@ -110,6 +118,13 @@ export default function InfrixNavbar() {
               </NavLink>
             ))}
             
+            <Link
+              to="/trabaja-con-nosotros"
+              onClick={() => setIsOpen(false)}
+              className="border-2 border-infrix-navy text-infrix-navy text-center py-4 font-display font-bold uppercase tracking-widest"
+            >
+              Trabaja con Nosotros
+            </Link>
             <Link
               to="/contacto"
               onClick={() => setIsOpen(false)}
