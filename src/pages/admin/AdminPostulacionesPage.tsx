@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import {
   Search,
   Download,
@@ -38,6 +39,8 @@ function EmpresaBadge({ slug, nombre }: { slug: string; nombre: string }) {
 }
 
 export default function AdminPostulacionesPage() {
+  const { empresaSlug } = useParams<{ empresaSlug: string }>();
+  const navigate = useNavigate();
   const [postulaciones, setPostulaciones] = useState<Postulacion[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -52,6 +55,14 @@ export default function AdminPostulacionesPage() {
       .catch((err) => setError(err instanceof Error ? err.message : 'Error al cargar'))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    setEmpresaFilter(empresaSlug ?? 'all');
+  }, [empresaSlug]);
+
+  const empresaActual = empresaSlug
+    ? EMPRESAS.find((e) => e.slug === empresaSlug)
+    : undefined;
 
   const filtered = useMemo(() => {
     const term = search.trim().toLowerCase();
@@ -110,29 +121,63 @@ export default function AdminPostulacionesPage() {
 
   return (
     <div className="space-y-8">
-      <div>
-        <h2 className="text-3xl text-infrix-navy font-display font-extrabold uppercase tracking-widest">
-          CVs <span className="text-infrix-orange">Recibidos</span>
-        </h2>
-        <p className="text-gray-500 font-body mt-2">
-          Postulaciones de todas las empresas del grupo en un solo lugar.
-        </p>
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          {empresaSlug && (
+            <Link
+              to="/admin/postulaciones"
+              className="inline-flex items-center gap-1.5 text-xs text-infrix-orange font-display font-bold uppercase tracking-widest hover:text-infrix-navy transition-colors mb-2"
+            >
+              ← Volver a todas
+            </Link>
+          )}
+          <h2 className="text-3xl text-infrix-navy font-display font-extrabold uppercase tracking-widest">
+            CVs <span className="text-infrix-orange">Recibidos</span>
+            {empresaActual && (
+              <span className="inline-flex items-center gap-2 ml-3 align-middle px-3 py-1 text-[10px] text-white"
+                style={{ backgroundColor: empresaActual.accent }}
+              >
+                {empresaActual.nombre}
+              </span>
+            )}
+          </h2>
+          <p className="text-gray-500 font-body mt-2">
+            {empresaActual
+              ? `Postulaciones recibidas para ${empresaActual.nombre}.`
+              : 'Postulaciones de todas las empresas del grupo en un solo lugar.'}
+          </p>
+        </div>
+        {!empresaSlug && (
+          <Link
+            to="/admin"
+            className="text-xs text-infrix-orange font-display font-bold uppercase tracking-widest hover:text-infrix-navy transition-colors"
+          >
+            ← Ir al dashboard
+          </Link>
+        )}
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-6 border border-gray-100 shadow-lg">
-          <p className="text-[10px] uppercase tracking-widest text-gray-400 font-display font-bold">Total</p>
-          <p className="text-3xl font-display font-extrabold text-infrix-navy mt-2">{stats.all}</p>
-        </div>
+        <Link
+          to="/admin/postulaciones"
+          className="bg-infrix-navy text-white p-6 border border-gray-100 shadow-lg hover:bg-infrix-navy/95 transition-colors"
+        >
+          <p className="text-[10px] uppercase tracking-widest text-gray-300 font-display font-bold">Total</p>
+          <p className="text-3xl font-display font-extrabold mt-2">{stats.all}</p>
+        </Link>
         {EMPRESAS.map((empresa) => (
-          <div key={empresa.slug} className="bg-white p-6 border border-gray-100 shadow-lg">
+          <Link
+            key={empresa.slug}
+            to={`/admin/postulaciones/${empresa.slug}`}
+            className="bg-white p-6 border border-gray-100 shadow-lg hover:border-infrix-orange/40 transition-colors"
+          >
             <p className="text-[10px] uppercase tracking-widest text-gray-400 font-display font-bold">
               {empresa.nombre}
             </p>
             <p className="text-3xl font-display font-extrabold mt-2" style={{ color: empresa.accent }}>
               {stats[empresa.slug] ?? 0}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -149,7 +194,14 @@ export default function AdminPostulacionesPage() {
         </div>
         <select
           value={empresaFilter}
-          onChange={(e) => setEmpresaFilter(e.target.value)}
+          onChange={(e) => {
+            const value = e.target.value;
+            if (empresaSlug) {
+              navigate(value === 'all' ? '/admin/postulaciones' : `/admin/postulaciones/${value}`);
+            } else {
+              setEmpresaFilter(value);
+            }
+          }}
           className={`${inputClass} appearance-none`}
         >
           <option value="all">Todas las empresas</option>
