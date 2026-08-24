@@ -11,14 +11,6 @@ const serviceIcons: Record<string, JSX.Element> = {
       <path d="M12 4V44M24 4V44M36 4V44" stroke="#db6820" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
     </svg>
   ),
-  'melamina-muebles': (
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 8H40V40H8V8Z" stroke="#db6820" strokeWidth="2" />
-      <path d="M8 24H40M24 24V40" stroke="#db6820" strokeWidth="2" />
-      <circle cx="16" cy="32" r="1.5" fill="#db6820" />
-      <circle cx="32" cy="32" r="1.5" fill="#db6820" />
-    </svg>
-  ),
   'instalaciones-electricas': (
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M24 4V12M24 36V44M12 24H4M44 24H36" stroke="#db6820" strokeWidth="2" strokeLinecap="round" />

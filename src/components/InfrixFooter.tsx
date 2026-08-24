@@ -77,7 +77,6 @@ export default function InfrixFooter() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 font-display">
               {[
                 { name: 'Drywall & Estructuras', slug: 'drywall-estructuras' },
-                { name: 'Melamina y Muebles', slug: 'melamina-muebles' },
                 { name: 'Instalaciones Eléctricas', slug: 'instalaciones-electricas' },
                 { name: 'Gasfitería y Saneamiento', slug: 'gasfiteria-saneamiento' },
                 { name: 'Proyectos Civiles y Electromecánicos', slug: 'proyectos-civiles-electromecanicos' },

@@ -5,7 +5,6 @@ import PageHero from '../components/PageHero';
 
 const servicesList = [
   'Drywall & Estructuras',
-  'Melamina y Muebles',
   'Instalaciones Eléctricas',
   'Gasfitería y Saneamiento',
   'Proyectos Civiles',

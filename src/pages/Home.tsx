@@ -11,7 +11,6 @@ import {
   Users,
   Building2,
   Droplets,
-  Hammer,
   Layout,
   Mountain,
   Paintbrush,
@@ -82,7 +81,6 @@ const Home = () => {
   const getServiceIcon = (slug: string) => {
     switch (slug) {
       case 'drywall-estructuras': return <Layout size={32} />;
-      case 'melamina-muebles': return <Hammer size={32} />;
       case 'instalaciones-electricas': return <Zap size={32} />;
       case 'gasfiteria-saneamiento': return <Droplets size={32} />;
       case 'proyectos-civiles-electromecanicos': return <HardHat size={32} />;

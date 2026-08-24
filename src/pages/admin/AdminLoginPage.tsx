@@ -4,7 +4,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { GRUPO_NOMBRE } from '../../data/empresas';
 
 export default function AdminLoginPage() {
-  const { session, loading, signIn } = useAuth();
+  const { session, loading, signIn, configured } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -49,6 +49,15 @@ export default function AdminLoginPage() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {!configured && (
+            <div className="bg-amber-50 border border-amber-300 p-4 text-center">
+              <p className="text-amber-800 text-sm font-bold font-display uppercase tracking-wider mb-1">⚠ Supabase no configurado</p>
+              <p className="text-amber-700 text-xs font-body">
+                Cree un archivo <code className="text-infrix-orange font-bold">.env</code> con las variables <code className="text-infrix-orange">VITE_SUPABASE_URL</code> y <code className="text-infrix-orange">VITE_SUPABASE_ANON_KEY</code>.
+              </p>
+            </div>
+          )}
+
           <div className="space-y-2">
             <label className="text-[10px] uppercase tracking-[3px] text-gray-500 font-bold font-display">
               Correo
@@ -60,6 +69,7 @@ export default function AdminLoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="admin@empresa.com"
               className={inputClass}
+              disabled={!configured}
             />
           </div>
 
@@ -74,6 +84,7 @@ export default function AdminLoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               className={inputClass}
+              disabled={!configured}
             />
           </div>
 
@@ -83,7 +94,7 @@ export default function AdminLoginPage() {
 
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !configured}
             className="btn-primary w-full py-5 text-sm tracking-[4px] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'INGRESANDO...' : 'INGRESAR'}

@@ -58,43 +58,10 @@ export const services: Service[] = [
         '/assets/services/Drywall & Estructuras/WhatsApp Image 2026-05-04 at 17.23.19 (8).jpeg'
       ]
     },
-    relatedServices: ['melamina-muebles', 'acabados-arquitectura-interior']
+    relatedServices: ['acabados-arquitectura-interior', 'instalaciones-electricas']
   },
   {
     id: '02',
-    slug: 'melamina-muebles',
-    name: 'Melamina y Muebles',
-    tagline: 'Mobiliario a medida, identidad de espacio',
-    description: 'Diseñamos y fabricamos muebles en melamina de alta densidad para proyectos residenciales, hoteleros y corporativos. Cada pieza es personalizada según planos arquitectónicos, utilizando herrajes de alta calidad para durabilidad extrema.',
-    bullets: [
-      'Muebles a medida',
-      'Cocinas y closets',
-      'Mobiliario de oficina',
-      'Acabados en melamina premium'
-    ],
-    stats: [
-      { value: 'Diseño', label: 'A medida' },
-      { value: 'Funcionalidad', label: 'En cada espacio' },
-      { value: 'Alto', label: 'Estándar de acabados' }
-    ],
-    process: [
-      { step: '01', title: 'Planteamiento', desc: 'Definición de estilos, colores y texturas.' },
-      { step: '02', title: 'Despiece', desc: 'Ingeniería de detalle para corte de precisión.' },
-      { step: '03', title: 'Fabricación', desc: 'Procesamiento en planta con maquinaria CNC.' },
-      { step: '04', title: 'Ensamblaje', desc: 'Montaje en sitio con ajustes finales de precisión.' }
-    ],
-    images: {
-      hero: '/assets/services/Melamine y muebles.webp',
-      gallery: [
-        '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (14).jpeg',
-        '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (3).jpeg',
-        '/assets/services/Melamina y Muebles/WhatsApp Image 2026-05-04 at 17.23.19 (4).jpeg'
-      ]
-    },
-    relatedServices: ['drywall-estructuras', 'acabados-arquitectura-interior']
-  },
-  {
-    id: '03',
     slug: 'instalaciones-electricas',
     name: 'Instalaciones Eléctricas',
     tagline: 'Energía segura, sistemas que duran',
@@ -127,7 +94,7 @@ export const services: Service[] = [
     relatedServices: ['gasfiteria-saneamiento', 'proyectos-civiles-electromecanicos']
   },
   {
-    id: '04',
+    id: '03',
     slug: 'gasfiteria-saneamiento',
     name: 'Gasfitería y Saneamiento',
     tagline: 'Redes hídricas con ingeniería de detalle',
@@ -160,7 +127,7 @@ export const services: Service[] = [
     relatedServices: ['instalaciones-electricas', 'proyectos-civiles-electromecanicos']
   },
   {
-    id: '05',
+    id: '04',
     slug: 'proyectos-civiles-electromecanicos',
     name: 'Proyectos Civiles y Electromecánicos',
     tagline: 'Ingeniería estructural de alta exigencia',
@@ -193,7 +160,7 @@ export const services: Service[] = [
     relatedServices: ['campamentos-mineros-industriales', 'instalaciones-electricas']
   },
   {
-    id: '06',
+    id: '05',
     slug: 'acabados-arquitectura-interior',
     name: 'Acabados & Arquitectura Interior',
     tagline: 'Superficies que definen la experiencia',
@@ -226,7 +193,7 @@ export const services: Service[] = [
     relatedServices: ['drywall-estructuras', 'pintura-revestimiento']
   },
   {
-    id: '07',
+    id: '06',
     slug: 'campamentos-mineros-industriales',
     name: 'Campamentos Mineros e Industriales',
     tagline: 'Infraestructura de campo lista para operar',
@@ -259,7 +226,7 @@ export const services: Service[] = [
     relatedServices: ['proyectos-civiles-electromecanicos', 'gasfiteria-saneamiento']
   },
   {
-    id: '08',
+    id: '07',
     slug: 'pintura-revestimiento',
     name: 'Pintura & Revestimiento',
     tagline: 'Color y protección con precisión técnica',
